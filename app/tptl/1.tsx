@@ -1,7 +1,10 @@
+import React from "react";
+
 //How do transpilation, JSX, and build tools fit into the modern JavaScript toolchain for React, 
 //and how do they optimize compiled output?
 
-//JSX plays a key role in this pipeline. During compilation, JSX is converted into lower-level function calls or object representations that React can efficiently reconcile at runtime. For example, JSX such as:
+//JSX plays a key role in this pipeline. During compilation, JSX is converted into lower-level function calls or object representations that React can efficiently reconcile at runtime.
+// For example, JSX such as:
 
 /* class MyComponent extends React.Component {
   render() {
