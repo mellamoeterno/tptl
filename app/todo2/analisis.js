@@ -1,34 +1,37 @@
 'use client'
 import { useState } from "react";
-//typescript to do with functions
-type Todo = {
-  id: number;
-  text: string;
-  completed: boolean;
-};
+//javascript todo with consts
+
+
+
+
+
 
 export default function TodoApp() {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
 
-  function handleAddTodo() {
+  // Add todo
+  const handleAddTodo = () => {
     if (!input.trim()) return;
 
-    const newTodo: Todo = {
-      id: Date.now(),
-      text: input,
-      completed: false,
+    const newTodo = {
+      id: Date.now(), //Create a unique number for this newTodo
+      text: input, //take text the user typed and save as text of this newTodo
+      completed: false, //Set todo's status to 'not done yet' by default
     };
 
     setTodos((prev) => [...prev, newTodo]);
     setInput("");
-  }
-
-  function handleDelete(id: number) {
+  };
+  
+  // Delete todo
+  const handleDelete = (id) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
-  }
+  };
 
-  function handleToggle(id: number) {
+  // Toggle complete
+  const handleToggle = (id) => {
     setTodos((prev) =>
       prev.map((todo) =>
         todo.id === id
@@ -36,7 +39,7 @@ export default function TodoApp() {
           : todo
       )
     );
-  }
+  };
 
   return (
     <div style={{ maxWidth: 400, margin: "40px auto", fontFamily: "sans-serif" }}>
@@ -81,4 +84,5 @@ export default function TodoApp() {
       </ul>
     </div>
   );
-}
+};
+
