@@ -5,8 +5,6 @@ import { useState } from "react";
 
 
 
-
-
 export default function TodoApp() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
