@@ -1,17 +1,19 @@
 'use client'
 import { useState } from "react";
-//typescript to do with functions
+//typescript todo with consts
 type Todo = {
   id: number;
   text: string;
   completed: boolean;
 };
 
+
 export default function TodoApp() {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState<string>("");
 
-  function handleAddTodo() {
+  // Add todo
+  const handleAdd = (): void => {
     if (!input.trim()) return;
 
     const newTodo: Todo = {
@@ -22,13 +24,15 @@ export default function TodoApp() {
 
     setTodos((prev) => [...prev, newTodo]);
     setInput("");
-  }
+  };
 
-  function handleDelete(id: number) {
+  // Delete todo
+  const handleDelete = (id: number): void => {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
-  }
+  };
 
-  function handleToggle(id: number) {
+  // Toggle complete
+  const handleToggle = (id: number): void => {
     setTodos((prev) =>
       prev.map((todo) =>
         todo.id === id
@@ -36,32 +40,35 @@ export default function TodoApp() {
           : todo
       )
     );
-  }
+  };
 
   return (
-    <div style={{ maxWidth: 400, margin: "40px auto", fontFamily: "sans-serif" }}>
+    <div style={{ maxWidth: "400px", margin: "50px auto", fontFamily: "Arial" }}>
       <h2>Todo List</h2>
 
       {/* Input */}
-      <div style={{ display: "flex", gap: 8 }}>
+      <div style={{ display: "flex", gap: "8px" }}>
         <input
+          type="text"
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setInput(e.target.value)
+          }
           placeholder="Add a todo..."
-          style={{ flex: 1 }}
+          style={{ flex: 1, padding: "8px" }}
         />
-        <button onClick={handleAddTodo}>Add</button>
+        <button onClick={handleAdd}>Add</button>
       </div>
 
       {/* List */}
-      <ul style={{ marginTop: 20, padding: 0 }}>
+      <ul style={{ marginTop: "20px", padding: 0 }}>
         {todos.map((todo) => (
           <li
             key={todo.id}
             style={{
               display: "flex",
               justifyContent: "space-between",
-              marginBottom: 10,
+              marginBottom: "10px",
               listStyle: "none",
             }}
           >
@@ -75,10 +82,11 @@ export default function TodoApp() {
               {todo.text}
             </span>
 
-            <button onClick={() => handleDelete(todo.id)}>❌</button>
+            <button onClick={() => handleDelete(todo.id)}>Delete</button>
           </li>
         ))}
       </ul>
     </div>
   );
-}
+};
+
