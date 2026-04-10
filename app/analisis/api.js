@@ -7,12 +7,13 @@ const ApiList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
+    const fetchData = async () => { 
+      try {                                             //try is used to use catch (err) to catch the error if an value is false
         setLoading(true);
         setError(null);
 
-        const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts");     //fetch retrieves various resources from a server, sends Data, handle responses,
+                                                                                        //& manage requests between different domains
 
         if (!response.ok) {                              //response.ok manually verify if a Fetch API request was successful
           throw new Error("Failed to fetch data");
@@ -22,13 +23,13 @@ const ApiList = () => {
         setData(result);
       } catch (err) {
         setError(err.message || "Something went wrong"); //err.message used in catch blocks to display specific details about why an error happened
-      } finally {
+      } finally {                                        //finally execute code regardless of whether a block succeeds or fails
         setLoading(false);
       }
     };
 
     fetchData();
-  }, []);
+  }, []);                                                //the useEffect runs only on mount
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
