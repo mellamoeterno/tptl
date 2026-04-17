@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/comp/todoCL.js"  ],
+, "app/comp/page.js"  ],
   "exclude": ["node_modules"]
 }
