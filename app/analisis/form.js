@@ -7,7 +7,7 @@ const Form = () => {
     password: "",
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({});           //figure out why is the state for error setErrors with {} instead of null
 
   // Handle input change (controlled inputs)
   const handleChange = (e) => {
