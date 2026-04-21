@@ -15,8 +15,8 @@ const ApiList = () => {
         const response = await fetch("https://jsonplaceholder.typicode.com/posts");     //fetch retrieves various resources from a server, sends Data, handle responses,
                                                                                         //& manage requests between different domains
 
-        if (!response.ok) {                              //response.ok manually verify if a Fetch API request was successful
-          throw new Error("Failed to fetch data");
+        if (!response.ok) {                              //response.ok manually verify if a Fetch API request was successful 
+          throw new Error("Failed to fetch data");      //The ! operator is used with response.ok to negate the boolean value, checking if the response was not successful.
         }
 
         const result = await response.json();
