@@ -7,7 +7,8 @@ const Form = () => {
     password: "",
   });
 
-  const [errors, setErrors] = useState({});           //figure out why is the state for error setErrors with {} instead of null
+  const [errors, setErrors] = useState({});           //figure out why is the state for error setErrors with {} instead of null 
+                                                      //(null explicitly represents the absence of data) {} is used to prevent errors and yada yada... wordpad details.
 
   // Handle input change (controlled inputs)
   const handleChange = (e) => {
