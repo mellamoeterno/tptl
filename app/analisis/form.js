@@ -55,7 +55,7 @@ const Form = () => {
 
     const validationErrors = validate();
 
-    if (Object.keys(validationErrors).length > 0) {
+    if (Object.keys(validationErrors).length > 0) {   
       setErrors(validationErrors);
     } else {
       console.log("Form submitted:", values);
