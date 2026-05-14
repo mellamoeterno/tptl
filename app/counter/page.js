@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useMemo, useCallback } from "react";
+//Counter with optimization (useMemo/useCallback)
 
 // Simulate expensive calculation
 const expensiveCalculation = (num) => {
