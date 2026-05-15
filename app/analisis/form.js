@@ -84,7 +84,7 @@ const Form = () => {
         />
         {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
       </div>
-
+ 
       {/* Email */}
       <div>
         <input
