@@ -68,7 +68,7 @@ const Form = () => {
       });
     }
   };
- 
+  
   return (
     <form onSubmit={handleSubmit} style={{ maxWidth: "400px", margin: "0 auto" }}>
       <h2>Register</h2>
