@@ -18,7 +18,7 @@ const ApiList = () => {
         if (!response.ok) {                              //response.ok manually verify if a Fetch API request was successful 
           throw new Error("Failed to fetch data");      //The ! operator is used with response.ok to negate the boolean value, checking if the response was not successful.
         }
-
+ 
         const result = await response.json();
         setData(result);
       } catch (err) {
