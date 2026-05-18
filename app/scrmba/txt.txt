@@ -1,0 +1,53 @@
+now react has this new thing where if you need something like <Marquee></Marquee> to show the text inside it to work as children prop, you just use props.children
+props.children
+
+it also helps with the cenario of when you need to use icon inside a button and you run into the problem of which side of the text you want to put it
+
+<button icon="" iconLocation="right" ></button>
+
+^^^^  so instead of doing this we just do inside the text, no special iconLocation needed.
+
+<button>{icon} Mercedes amg button </button>
+
+
+
+Another situation ive ran into is the two ways of using props (props) & ({name})
+
+one is a specifier, the other a whole package
+
+Specifier way of using props:
+const Button = ({ children, onClick }) => {
+  return (
+    <button onClick={onClick}>
+      {children}
+    </button>
+  );
+};
+
+export default Button;
+
+
+
+whole package of using props:
+export default function Button(props) {
+    return (
+        <button onClick={props.onClick}>{props.children}</button>
+    )
+}
+
+the specifier:
+ function Student({ name })	"I only care about the name field. Take it out now so I can 
+                                                                       use it directly."
+the whole package:
+function Student(props)	                               "Give me the whole package. I'll dig inside it                                                                                                         myself whenever I need something."
+                                                                    myself whenever I need something."
+
+and about the children:
+
+Why do you need children?
+
+Because otherwise the content inside <Button>...</Button> would never appear.
+Without children your output would be Empty button. <button></button>
+The icon and text are lost because you never rendered children.
+
+so its necessary to use the (children) because in the main code The imported Button, the information inside of it needs to be worked by the code in the Button.js
