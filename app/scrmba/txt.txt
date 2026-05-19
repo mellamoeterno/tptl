@@ -51,3 +51,60 @@ Without children your output would be Empty button. <button></button>
 The icon and text are lost because you never rendered children.
 
 so its necessary to use the (children) because in the main code The imported Button, the information inside of it needs to be worked by the code in the Button.js
+
+
+--------------------------------
+
+Aside - Destructuring props:
+
+Ive noticed this fact related to props, callback, and specificier props ({props, whathever})
+
+We can use the spread operator with ({...rest}) which can be named anything
+
+As i already knew props is just naming convetion for clarity
+
+when i use (props) to get all the package instead of specifying ({name})
+(props) could as well be (wathever) and it would still get all the
+prop package to access, just as well as using (callback)
+
+
+---
+
+the part where have:
+
+function Button({children, ...rest})
+
+if i use children in there the ...rest wont show on console.log 
+the children cus it was already specified
+
+
+
+--------------------------------
+
+button - size prop
+
+
+in the question i had about the way the professor did the challenge
+code answer:
+
+
+my way using ternary operator and stric equality was correct,
+ but my professor did differently
+
+ i want to understand how that if statement is working without {} 
+ shouldnt it be if (size === "sm") { sizeClass = "button-small"}
+
+
+---
+
+In JavaScript, {} are optional when an if statement contains only one single statement.
+
+So these two are equivalent:
+
+if (size === "sm") sizeClass = "button-small"
+
+and:
+
+if (size === "sm") {
+  sizeClass = "button-small"
+}
