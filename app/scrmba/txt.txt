@@ -134,3 +134,162 @@ const b = -2;
 
 console.log(a > 0 && b > 0);
 // Expected output: false
+
+
+--------------------------------
+
+Mega challenge - overloaded avatar component
+
+theres many things going on here in which i need to remember 
+to figure out over time
+
+1- i was trying to figure out the className="avatar"
+but failed, i figure it was only working cause of let variable
+(let className="avatar") but doing const or ever var instead
+ended on same result. This may be a javascript problem
+
+The let className = "avatar" was an AI fix but above this
+did not make sense to work in the way it did.
+
+Ofc this fix wasnt correct, the correct way was to use
+className inside the div (return(<div className="avatar"></div>))
+
+And by the fix being the above ^^ it makes things even more 
+confusing, the way className its put inside the div makes sense
+but for it to be working as well using const let or var 
+is nonsense to me.
+
+---
+
+Now about the other problem related to the ({children})
+(the problem was that when i used in the last if (if (children)
+or if ({children}) by using the {children} it was breaking the
+last else which was necessary to return something, and it wasnt
+returning)) so:
+
+
+What {children} actually means there:
+
+So this:
+
+if ({children})
+
+becomes effectively:
+
+if ({})
+
+which is always true.
+
+an object literal.
+
+Objects in JavaScript are always truthy.
+
+So it would look like it was correctly refering to children
+but it wasnt, it was just an newly created object '-'
+
+---
+
+now things to remember here:
+
+that className was refering to some css crap even tho
+it didnt make sense sometimes, without it i couldnt
+wrap correctly the div and return that nice round shit.
+
+the "avatar" "avatar avatar-letters" "avatar avatar-icon"
+were all refering to some css even though they were
+just thrown there along with the className looking like some
+normal ass string.
+
+-
+
+the {..rest} was useless here, but i figure it somehow its just
+used to... get every prop at the end for no reason..
+
+at all.. it felt like
+
+-
+
+ive also tried using (props) with {...props} before the 
+props when i was trying to specify them src={src}
+but when i did that it didnt work and the image wasnt showing.
+
+ex:
+didnt work:>>>
+export default function Avatar(props) {
+    
+ 
+
+    if (src) {
+        return (
+            <div className="avatar">
+                <img {...props}></img>
+            </div>
+            )
+    }
+}
+
+did work:>>>
+export default function Avatar({children, src, alt}) {
+    
+ 
+
+    if (src) {
+        return (
+            <div className="avatar">
+                <img src={src} alt={alt}></img>
+            </div>
+            )
+    }
+}
+*obs this is just a piece of whole code^^^^
+
+--
+
+and for last, the professor called the Avatar.js a API 
+component so this component work just like an method used in react 
+or hook sort of.
+
+
+--------------------------------
+
+Prop Drilling
+
+
+
+
+about the "abstraction" ive seen, it basically means:
+
+
+
+Imagine building furniture.
+
+Bad approach:
+
+You build a universal tool before knowing what furniture you’ll 
+make.
+
+AHA approach:
+
+Build a few chairs first.
+Then notice what actually repeats.
+THEN create the reusable tool.
+
+
+
+
+
+about: setOpen(prevOpen => !prevOpen)
+
+Everything to the left of => is the function’s input (parameters),
+           and everything to the right => is what the function returns
+
+“When you call setOpen you give it a little instruction: 
+
+Take the current value (prevOpen), then with the right side (!prevOpen)
+invert the current value:
+(if true → false, if false → true), and use that as the new value.”
+
+in other words
+
+whats on the left of the => is the earlier version, and whats 
+on the right will be replacing the left side
