@@ -293,3 +293,33 @@ in other words
 
 whats on the left of the => is the earlier version, and whats 
 on the right will be replacing the left side
+
+
+
+--------------------------------
+
+
+Exercise #1
+
+
+
+About createContext and type union:
+
+Type union 
+
+const PostCardContext = createContext<PostCardContext | undefined>(undefined);
+
+<PostCardContext | undefined>
+"This context can hold a value that 
+is either a PostCardContext object or the value undefined."
+
+
+createContext:
+
+const ThemeContext = createContext('light');
+
+const ThemeContext
+“ThemeContext is now a special object that holds a default value 
+of 'light'. Any component wrapped inside a ThemeContext.Provider 
+can read this value (or an overridden value) without receiving 
+it as a prop.”
