@@ -322,4 +322,20 @@ const ThemeContext
 “ThemeContext is now a special object that holds a default value 
 of 'light'. Any component wrapped inside a ThemeContext.Provider 
 can read this value (or an overridden value) without receiving 
-it as a prop.”
+it as a prop.” 
+
+---
+
+about the .Provider
+
+
+      <DashboardContext.Provider value={user}>
+        <Dashboard />
+      <DashboardContext.Provider>
+
+
+
+“createContext creates an object. That object automatically
+ has two properties: .Provider and .Consumer. You don’t make 
+ them yourself — React gives them to you for free when
+ you call createContext.”
