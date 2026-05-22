@@ -84,18 +84,16 @@ the children cus it was already specified
 button - size prop
 
 
-in the question i had about the way the professor did the challenge
-code answer:
+in the question i had about the way the professor answered the challenge
+code:
 
 
 my way using ternary operator and stric equality was correct,
- but my professor did differently
+ but my professor did differently;
 
- i want to understand how that if statement is working without {} 
- shouldnt it be if (size === "sm") { sizeClass = "button-small"}
+ my question: "i want to understand how that if statement is working without {} 
+ shouldnt it be if (size === "sm") { sizeClass = "button-small"}"
 
-
----
 
 In JavaScript, {} are optional when an if statement contains only
  one single statement.
@@ -148,24 +146,31 @@ but failed, i figure it was only working cause of let variable
 (let className="avatar") but doing const or ever var instead
 ended on same result. This may be a javascript problem
 
-The let className = "avatar" was an AI fix but above this
-did not make sense to work in the way it did.
+The let className = "avatar" was an AI fix but above this, 
+it did not make sense to work in the way it did.
 
 Ofc this fix wasnt correct, the correct way was to use
-className inside the div (return(<div className="avatar"></div>))
+className inside the div, in: return(<div className="avatar"></div>)
 
 And by the fix being the above ^^ it makes things even more 
 confusing, the way className its put inside the div makes sense
 but for it to be working as well using const let or var 
 is nonsense to me.
 
----
+Another note, is that the "avatar" wasnt just string data, somehow by doing
+let className="avatar" the code was still thinking that "avatar" was a css
+attribute, and it truly was, when i deleted it and dindt add to the div,
+the css attribute would vanish.
+
+--
 
 Now about the other problem related to the ({children})
-(the problem was that when i used in the last if (if (children)
-or if ({children}) by using the {children} it was breaking the
-last else which was necessary to return something, and it wasnt
-returning)) so:
+(the problem was that when i used in the last if:
+  if (children)
+or if ({children}) 
+by using the {children} it was breaking the
+last 'else' which was necessary to return something, and it wasnt
+returning) so:
 
 
 What {children} actually means there:
@@ -187,7 +192,7 @@ Objects in JavaScript are always truthy.
 So it would look like it was correctly refering to children
 but it wasnt, it was just an newly created object '-'
 
----
+--
 
 now things to remember here:
 
@@ -339,3 +344,45 @@ about the .Provider
  has two properties: .Provider and .Consumer. You don’t make 
  them yourself — React gives them to you for free when
  you call createContext.”
+
+
+--
+
+ still on exercise #1
+
+but ive had to study about createContext and useContext to understand
+compound components
+
+-
+
+the problem:
+
+some props with boolean to show some <div> only on a certain place 
+isOnProfile?: boolean, isOnSavedScreen?: boolean, etc. 
+
+for that ^^^ after the 3rd prop with boolean to display the <div>
+the logic gets complicated, making it unmaintainable.
+
+
+To fix that we use the design pattern of compound components
+
+ the difference of compound components to the component above
+is that they are components that are split up into multiple components 
+
+One main component that youre free to choose
+subcomponents you want to use of that specific use case.
+
+And very importantly in which order you want to use them,
+and customize them even further.
+
+--
+
+The refactoring of the component to (compound component) 
+at 11:13
+
+
+
+
+
+
+
