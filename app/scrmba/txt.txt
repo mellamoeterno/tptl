@@ -382,7 +382,67 @@ at 11:13
 
 
 
+--------------------------------
 
+-react pause at Reusability Compound Components in React - Part 3 Exercise #1 - 
+
+ive come across this code in which i didnt understand
+how key={sport} being declared inside of its own context could be called
+before and change its state.
+
+so now im going to learn some more of method basics again.
+
+
+    {sports.map(sport => (
+      <MenuItem key={sport}>{sport}</MenuItem>
+    ))}
+
+--------------------------------
+Advanced JavaScript The for...of loop
+
+the for...of loop directly accesses each character in a string.
+
+for (let power of characters){
+    console.log(character.powers)
+}
+
+This code is mainly used to access (usually an array) data from each item one by one.
+
+This basically does is just access the data inside 'characters'
+
+--
+
+for...in
+
+for (let property in character1) {
+    console.log(character1[property])
+}
+
+
+Loops through OBJECT KEYS
+
+Used mainly for:
+
+plain objects
+
+--
+
+forEach
+
+is a js method for iterating over arrays, it is a more concise
+way of iterating over arrays
+
+characters.forEach(function(character){console.log(character.title)})
+
+
+
+
+
+--------------------------------
+
+-react resume at Reusability Compound Components in React - Part 3 Exercise #1 - 
+
+--------------------------------
 
 
 
