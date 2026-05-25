@@ -130,7 +130,7 @@ Otherwise it will be false.
 const a = 3;
 const b = -2;
 
-console.log(a > 0 && b > 0);
+console.log(a > 0 && b > 0);    //this is just the context of this one prob, other ways im doing works like if statement.
 // Expected output: false
 
 
@@ -248,6 +248,25 @@ export default function Avatar({children, src, alt}) {
 }
 *obs this is just a piece of whole code^^^^
 
+
+retake on the above:
+
+TRY LATER doing:
+
+export default function Avatar(...props) {
+    
+ 
+
+    if (src) {
+        return (
+            <div className="avatar">
+                <img {...props}></img>
+            </div>
+            )
+    }
+}
+
+
 --
 
 and for last, the professor called the Avatar.js a API 
@@ -306,6 +325,9 @@ on the right will be replacing the left side
 
 Exercise #1
 
+but ive had to study about createContext and useContext to understand
+compound components.
+
 
 
 About createContext and type union:
@@ -350,10 +372,22 @@ about the .Provider
 
  still on exercise #1
 
-but ive had to study about createContext and useContext to understand
-compound components
 
 -
+The exercise was asking to explain:
+
+1-How to explain compound components to someone that only knows the basics
+of react?
+
+2-Something related to show some example of html stuff that when wrapped inside 
+another would make some special thing in the page (<ul> with <li> inside)
+
+3-Explain how compound components help in contrast to prop drilling.
+
+
+--
+
+So when studying about compound components i got this:
 
 the problem:
 
@@ -366,14 +400,15 @@ the logic gets complicated, making it unmaintainable.
 
 To fix that we use the design pattern of compound components
 
- the difference of compound components to the component above
+ the difference of compound components to the component above (the one that was 
+ using props)
 is that they are components that are split up into multiple components 
 
 One main component that youre free to choose
 subcomponents you want to use of that specific use case.
 
 And very importantly in which order you want to use them,
-and customize them even further.
+and customize them even further. (more of a possibility)
 
 --
 
@@ -401,6 +436,13 @@ so now im going to learn some more of method basics again.
 Advanced JavaScript The for...of loop
 
 the for...of loop directly accesses each character in a string.
+
+[
+{bunch of arrays before with data...}
+{bunch of arrays before with data...}
+]
+
+
 
 for (let power of characters){
     console.log(character.powers)
