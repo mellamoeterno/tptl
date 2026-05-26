@@ -477,8 +477,60 @@ way of iterating over arrays
 characters.forEach(function(character){console.log(character.title)})
 
 
+**everything on the net says forEach is very different of for...of, but they
+do exactly the same thing**
 
 
+-
+
+index 
+
+It does not contain the item's data (like "Ninja") unless you use it to look up that data.
+
+index is simply the numeric address (0, 1, 2, 3...) that identifies 
+which specific array item is currently being processed.
+
+
+characters.forEach(function(character, index){
+    console.log(index, character.title)
+})
+
+in this code ^^^ it'll show 0,1,2,3... which are access to the arrays
+and also display the titles
+
+--
+
+skeleton (or block statements) pattern in methods:
+
+
+The true pattern of block statements is:
+
+( () {})
+
+even in maximum skeleton (theoretical)
+
+( () { .( () { .( () { .( () { ( () { .( () { .( () { } ) } ) } , ) } ) } ) } ) } )
+
+but it can change according to what you'll do inside, but when calling methods
+with ()
+
+the pattern goes ( () {})
+
+
+
+--
+
+also i need to stop forgeting this:
+
+condition ? valueIfTrue : valueIfFalse
+
+-
+
+// Returns 'world' because both are truthy
+"hello" && "world"; // "world"
+
+// Returns false because the first operand is falsy
+false && "anything"; // false
 
 --------------------------------
 
