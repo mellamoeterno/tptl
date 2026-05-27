@@ -419,7 +419,7 @@ at 11:13
 
 --------------------------------
 
--react pause at Reusability Compound Components in React - Part 3 Exercise #1 - 
+-react pause at Reusability Compound Components in React - Part 3 Exercise #1 -------------------------
 
 ive come across this code in which i didnt understand
 how key={sport} being declared inside of its own context could be called
@@ -434,6 +434,22 @@ so now im going to learn some more of method basics again.
 
 --------------------------------
 Advanced JavaScript The for...of loop
+
+
+first thing before anything (thing that the teacher didnt explained)
+
+the 'for' alone syntax:
+
+
+for (initialization; condition; final-expression) {
+    // code to run each time
+}
+
+The first thing sets up a counter. 
+The second thing is a check that must be true to keep going. 
+The third thing updates the counter after each loop. 
+Then the curly braces hold the code to repeat.
+
 
 the for...of loop directly accesses each character in a string.
 
@@ -496,7 +512,7 @@ characters.forEach(function(character, index){
 })
 
 in this code ^^^ it'll show 0,1,2,3... which are access to the arrays
-and also display the titles
+and will also display the titles
 
 --
 
@@ -532,9 +548,47 @@ condition ? valueIfTrue : valueIfFalse
 // Returns false because the first operand is falsy
 false && "anything"; // false
 
+
 --------------------------------
 
--react resume at Reusability Compound Components in React - Part 3 Exercise #1 - 
+The .includes() Method / Exercise #1
+
+about that shit crap about the include() fix vs professor fix:
+
+i tried (itemInput.value * 2)                                     **truly earlier tried (itemInput * 2)**
+
+the professor did (itemInput.value)
+
+and that was enough to javascript to read it as duplicate value.
+
+bs explanation>:
+
+
+include compares:
+
+the NEW value
+against
+the EXISTING array contents.
+
+That’s what .includes() does automatically.
+
+So when user types something thats already there, js detects It
+and the code triggered the rest.
+
+--------------------------------
+
+The .map() method
+
+it goes through each item in that array one at a time,
+does something to each item (whatever you tell it to do), 
+and collects the results into a brand new array.
+
+
+
+
+--------------------------------
+
+-react resume at Reusability Compound Components in React - Part 3 Exercise #1 ------------------------- 
 
 --------------------------------
 
