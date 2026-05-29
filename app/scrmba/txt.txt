@@ -575,21 +575,6 @@ That’s what .includes() does automatically.
 So when user types something thats already there, js detects It
 and the code triggered the rest.
 
---------------------------------
-
-The .map() method
-
-it goes through each item in that array one at a time,
-does something to each item (whatever you tell it to do), 
-and collects the results into a brand new array.
-
-
---
-
-
-.push() method in JavaScript adds one or more elements to 
-the end of an array and modifies the original array in place. 
- It returns the new length of the array after the elements have been added.
 
 --------------------------------
 
