@@ -1,0 +1,24 @@
+About that hellish Destructuring
+
+i was trying to destructure but kept running on 
+('object' is not iterable) which was mainly because 
+i kept trying to destructure a object with [] in which
+javascript did not like.
+
+But thats not what truly made me finish that code,
+what i was in mainly in fault was correct destructuring syntax
+
+const {1, 2 , 3} = object;
+
+--
+
+Also there was this fact that when i destructured before 
+reassigning the data inside the object by dot access (object.name)
+
+It would impede the reassigning to work, and when i logged The
+object it would be incomplete.
+
+because "destructuring copies the current values into new 
+variables at the moment the destructuring happens."
+
+so i wasnt updating the already-created variables.
