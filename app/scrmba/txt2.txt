@@ -1,3 +1,35 @@
+ive learned about some code That
+
+switch(item) {
+        case 'coffee':
+            price = 2
+            break
+    }
+    return You selected ${item}. That will be $${price}
+
+
+-switch
+
+Look at the value inside the parentheses (item) and decide which 
+block of code to run based on that value.
+
+-case
+
+“If item is exactly equal to the string 'coffee', 
+then start running the code that follows this line 
+(up until a break or the next case).
+
+
+-break
+
+“Stop running inside this switch block right now  
+
+
+
+--------------------------------
+
+
+
 About that hellish Destructuring
 
 i was trying to destructure but kept running on 
@@ -22,3 +54,18 @@ because "destructuring copies the current values into new
 variables at the moment the destructuring happens."
 
 so i wasnt updating the already-created variables.
+
+
+in other words:
+
+const {destination, activity, accommodation, companion} = dreamHoliday         <<< this should be after the reassigning 
+                                                                               of the object's data. NOT before.
+dreamHoliday.destination = "go to Austin";                  
+dreamHoliday.activity = " visit the Tesla HQ"
+dreamHoliday.accommodation = "sleep in a luxury ranch"
+dreamHoliday.companion = "hang out with Elon Musk"
+
+
+--------------------------------
+
+
