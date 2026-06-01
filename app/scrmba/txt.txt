@@ -594,6 +594,19 @@ when using React.children.map()
 is different than javascript .map
 
 
+--
+
+
+React.cloneElement()
+
+A Utility that duplicates a react element and provides a way to inject additional props to that element.
+
+When used with React.children.map() it can be used to "augment" the original children with the new props
+
+
+
+--------------------------------
+
 
 
 
