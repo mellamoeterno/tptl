@@ -583,4 +583,20 @@ and the code triggered the rest.
 --------------------------------
 
 
+React.children:
+
+utility that provides methods for interacting with a components direct children elements\
+
+being the methods:
+ .map() forEach()..etc                        (React.children.map())     (React.children.forEach())
+
+when using React.children.map()
+is different than javascript .map
+
+
+
+
+
+
+
 
