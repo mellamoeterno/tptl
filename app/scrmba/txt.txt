@@ -582,6 +582,12 @@ and the code triggered the rest.
 
 --------------------------------
 
+The React.Children API
+
+
+
+
+
 
 React.children:
 
@@ -599,17 +605,63 @@ is different than javascript .map
 
 React.cloneElement()
 
-A Utility that duplicates a react element and provides a way to inject additional props to that element.
 
-When used with React.children.map() it can be used to "augment" the original children with the new props
+take the existing props a child already has, and add new props to them or overwrite some of them 
+— but keep the child’s original type (like <button> or <MyComponent>) the same.
 
+cloneElement() takes an existing React element and makes a copy of it. 
+On that copy, you can change or add new props, and even change its children
+
+
+The "augment" thing (adding/modifying props) works with React.cloneElement() 
+by itself. React.Children.map() is just a common place to use it, not a requirement.
+
+--
+
+
+
+
+
+{React.Children.map(children, (child) => {
+                ....
+            })}
+
+
+The map function hands you each child one at a time, 
+and you give that item a name so you can work with it inside the function.
+
+
+
+When you write (child) =>, you're saying: "Give me each child element, 
+and I'll call it child so I can read its props, its type, or clone it."
 
 
 --------------------------------
 
 
+The React.Children API Exercise #2
+
+
+i did the code:
+
+    if (open === true) {
+        return (
+            <div className="menu-dropdown" >
+                {children}
+            </div>)
+    }
+
+
+but scrimba told me that i needed to return null, the reason:
+
+When open is false, this effectively becomes:
+
+function Dropdown({ open, children }) {
+    return undefined
+}
+
+React components should return null when you intentionally want nothing rendered.
 
 
 
-
-
+--------------------------------
