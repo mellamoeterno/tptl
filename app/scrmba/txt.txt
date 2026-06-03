@@ -664,4 +664,37 @@ React components should return null when you intentionally want nothing rendered
 
 
 
+---
+
+Also the professor way of fixing was this which i liked:
+
+   return open ? (
+        <div className="menu-dropdown">
+            {children}
+        </div>
+    ) : null
+
+
+--------------------------------
+
+React.Children shortcomings
+
+
+React.children are fragile and delicate. 
+(remember the div affecting the <MenuDropDown/> in index)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --------------------------------
