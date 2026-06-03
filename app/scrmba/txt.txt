@@ -684,17 +684,20 @@ React.children are fragile and delicate.
 (remember the div affecting the <MenuDropDown/> in index)
 
 
+--------------------------------
+
+State + context
+
+about the prevOpen, or prevTheme.
+
+The professor said: "bacause we need to know what It
+previously was we need to use callback named prevTheme"
 
 
-
-
-
-
-
-
-
-
+This prev this seems to be related to the possibility of needing 
+to know the previous state of something.
 
 
 
 --------------------------------
+
