@@ -688,6 +688,10 @@ React.children are fragile and delicate.
 
 State + context
 
+
+
+in one of the challenges:
+
 about the prevOpen, or prevTheme.
 
 The professor said: "bacause we need to know what It
@@ -697,6 +701,105 @@ previously was we need to use callback named prevTheme"
 This prev this seems to be related to the possibility of needing 
 to know the previous state of something.
 
+
+
+
+in the 3rd challenge:
+
+Ive created a createContext and passed 2 datas, a handleToggle, and a string.
+
+the way to do it is by {{toggleFunction, value}}
+
+
+
+
+in the last challenge:
+
+
+Ive passed that data wrapping two components <Header /> <Button />
+with the provider.
+
+
+And inside the components i needed to pass the value.
+i failed trying accesing the properties and one of them didnt work.
+(because in header i tried toggleFunction, and the code was expecting
+theme, BECAUSE I DIDNT MAKE THE CODE AND DIDNT FKING KNOW)
+
+
+
+The right ways where 2 ways:
+
+1 specifying what i wanted from the useContext {value.theme}
+
+2 destructure directly in the const behind useContext {theme} {toggleFunction}
+   -const { theme } = React.useContext(ThemeContext)
+
+
+in some ways this fix felt like dealing with props in a Component- remember that.
+
+
+
+
+--------------------------------
+
+Menu component final touches
+
+
+about the Components inside each other.
+
+The professor said were doing this, but unlike using React.children it isnt
+fragile. (the adding of div thing) so it wont break if a div is added in the
+way.
+
+
+
+--------------------------------
+
+a11y
+
+
+for adding accesibility:
+
+we add:
+
+role="menu"
+
+
+and because in this kind of menu, its neeeded to resort to
+aria atributes:
+
+by indicating that the role of the div is a menu, it indicates for
+a screen reader what kind of role the div is going to be.
+
+
+1-
+ aria-expended atribute, is added to a button. 
+
+^^^^and it needs to know if the menu is open or close:
+aria-expanded={open}                                <<<add on the button
+
+
+2-
+
+aria-haspopup
+
+allows the user to know if the Button has an associated menu that will toggle
+aria-haspopup="true"                                <<also add on the button
+
+3-
+
+aria-hidden
+
+goes for when the menu its closed, its applied in the menu component.
+
+4-
+
+aria-controls
+
+
+and it needs the id of what its gonna be controlling
+
+^^^^for this 'useId' is very important. (it generate stable Ids that persist renders)
 
 
 --------------------------------
