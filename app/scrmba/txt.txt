@@ -804,3 +804,54 @@ and it needs the id of what its gonna be controlling
 
 --------------------------------
 
+Compound components w/ dot syntax
+
+
+it seems its a possibility to compact many imports like this:
+
+in one file:
+
+import Menu from "./Menu"
+import MenuButton from "./MenuButton"
+import MenuDropdown from "./MenuDropdown"
+import MenuItem from "./MenuItem"
+
+Menu.Button = MenuButton
+Menu.Dropdown = MenuDropdown
+Menu.Item = MenuItem
+
+export default Menu
+
+
+then in the main file:
+
+import Menu from "./Menu/index"
+
+      <Menu.Button>Sports</Menu.Button>
+
+
+--------------------------------
+
+
+Headless Toggle component
+
+
+they dont have a styled ui display, theyre purely intended
+to provide functionality.
+
+^^^ i still dont know why we need this shit
+
+--------------------------------
+
+Toggle.button
+
+
+
+bubble effect
+
+I dont get it, the wrapped component by some others component
+<star> when clicked on was triggering an console.log in a parent component
+
+
+--------------------------------
+
