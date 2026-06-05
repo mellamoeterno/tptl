@@ -1,3 +1,9 @@
+*****objective of file is to get the needed info to finish commerce project*******
+
+
+
+What i dont know (need improve logic):
+
 typescript:
 create from (zustang)
 ( : )   >>> ex: export function ProductDetails({ product }: ProductDetailsProps) 
@@ -23,6 +29,22 @@ cart page client
 
 clear cart on mount 
 
+
+RESUME OF THE ORDER:
+
+Advanced javascript**
+
+Asynchronous JavaScript & APIs
+
+Learn react**
+
+4th Side Effects 
+
+react advanced**
+
+3rd section Perfomance -
+
+typescript related to realEcommerce types on functions props etc ( : )
 
 
 --------------------------------
@@ -75,12 +97,23 @@ Stopped "Side effects" because right order is Asynchronous JavaScript & APIs fir
 
 --------------------------------
 
+
 Asynchronous JavaScript & APIs
 
 fetching with fetch().then
 
 .then is a method that pick what we get back from fetch, and make it available
 in a parameter, in a callback function
+
+by convetion we call it response
+
+
+json 
+
+the json method is basically the json from the browser made usable to us:
+
+.then(response => repsonse.json)
+
 
 
 --------------------------------
