@@ -1,0 +1,115 @@
+typescript:
+create from (zustang)
+( : )   >>> ex: export function ProductDetails({ product }: ProductDetailsProps) 
+
+React:
+
+asyn, await. 
+try, as, catch.
+useCallback, memo, useMemo
+POST 
+cache from "react"
+useEffect
+
+React components/whole file code:
+
+api route
+
+add to cart button
+
+cart link
+
+cart page client
+
+clear cart on mount 
+
+
+
+--------------------------------
+"Learn react"
+
+React state - Updating state with a callback function
+
+
+    function add() {
+        setCount(function() {                   this function() paremeter is going to be passed the old value of 
+            return count + 1                    the state before the set count of the function ran.
+        })
+    }
+
+so:
+
+    function add() {
+        setCount(function(oldValue) {   
+            return oldValue + 1                 instead of using count + 1 we can use oldValue + 1
+        })
+    }
+
+
+and also, this is commoly done with (prev'name of state') 
+(prevCount) in case.
+
+
+and also another common way of doing is taking advatage of arrow function:
+
+
+    function add() {
+        setCount(prevCount=> prevCount + 1)      thats what ive been seeing all along, a call back along with arrow function.
+    }
+
+
+
+--------------------------------
+
+Meme Generator - Controlled Components - part 1
+
+here he talked about form, and i thought because i hadnt touched this 
+topic much i should give more attention, but its just 
+setting a state for catching the data and handling it with useState
+value, setValue all that stuff...
+
+
+--------------------------------
+
+Stopped "Side effects" because right order is Asynchronous JavaScript & APIs first
+
+--------------------------------
+
+Asynchronous JavaScript & APIs
+
+fetching with fetch().then
+
+.then is a method that pick what we get back from fetch, and make it available
+in a parameter, in a callback function
+
+
+--------------------------------
+
+Side effects - Fetching data in react
+
+
+
+Despite in functional programming saying you need to avoid side effects 
+(i dont get the reason very well) but seems to be one of the main principles:
+
+Main principles:
+
+-Pure functions
+-Immutability
+-Avoiding side effects
+
+
+and side effects are still an important thing to have,
+we want to mutate data in databases and add values to local
+storage or subscribe to web socket connections.
+
+So we need a solution in react that allows us to avoid side
+effect as much as possible, but also to escape from that 
+paradigm whenever its needed to build whats necessary.
+
+
+A common thing is to fetch data outside your own react app
+
+
+--------------------------------
+
