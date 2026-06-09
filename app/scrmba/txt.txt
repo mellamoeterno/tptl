@@ -68,7 +68,7 @@ when i use (props) to get all the package instead of specifying ({name})
 prop package to access, just as well as using (callback)
 
 
----
+-
 
 the part where have:
 
@@ -266,6 +266,8 @@ export default function Avatar(...props) {
     }
 }
 
+
+**tried it, didnt work**
 
 --
 
@@ -490,11 +492,13 @@ forEach
 is a js method for iterating over arrays, it is a more concise
 way of iterating over arrays
 
-characters.forEach(function(character){console.log(character.title)})
+characters.forEach(function(character){
+    console.log(character.title)
+    })
 
 
 **everything on the net says forEach is very different of for...of, but they
-do exactly the same thing**
+do exactly the same thing**   **at least the syntax above does**
 
 
 -
@@ -616,6 +620,15 @@ On that copy, you can change or add new props, and even change its children
 The "augment" thing (adding/modifying props) works with React.cloneElement() 
 by itself. React.Children.map() is just a common place to use it, not a requirement.
 
+ex:
+
+            {React.Children.map(children, (child) => {
+                return React.cloneElement(child, {
+                    toggle,
+                    open
+                })
+            })}
+
 --
 
 
@@ -652,19 +665,24 @@ i did the code:
     }
 
 
-but scrimba told me that i needed to return null, the reason:
+but scrimba told me that i needed to return null like:
 
-When open is false, this effectively becomes:
+    if (open === false) {
+        return null
+    }
 
-function Dropdown({ open, children }) {
+----the reason:
+
+When open is false, that code effectively becomes:
+
     return undefined
-}
+
 
 React components should return null when you intentionally want nothing rendered.
 
 
 
----
+--
 
 Also the professor way of fixing was this which i liked:
 
