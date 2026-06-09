@@ -265,6 +265,119 @@ fetch('url',{method: 'POST'})
 'GET' is the default, its always there, but when in need of making something else
 its necessary to specify.
 
+This will make the json aknowledge the data, we wont actually be adding data to them.
+
+--------------------------------
+
+
+API requests: the body
+
+JSON.stringify
+
+were taking a javascript object and converts to json string.
+
+--
+
+by using headers:
+
+headers: {
+                'Content-Type': 'application/json'
+            }
+
+
+we get a better object back with information, which shows our own stuff
+and the json stuff, with most likely more information.
+
+ 
+
+
+--------------------------------
+
+The Promise Constructor
+
+
+
+Sometimes is useful to create a promise using promise constructor
+
+Common use case is when you need to create your own Asynchronous action
+
+
+
+
+---
+^^^^^in connection with the above (although in different class)                         (i say connection, in a probability kind of way cus idfk)
+Working with images asynchronously
+
+
+
+const image = new Image()
+image.src = "http://..."
+
+
+
+/*
+Challenge:
+1. Create two event listeners. One should listen 
+   out for the image loading and log “Image has 
+   loaded”. The other should listen for an error 
+   and log “Image has NOT loaded”.
+*/
+
+my resoultion***:
+
+
+image.addEventListener("load", function() {
+   console.log("image has loaded")
+})
+
+image.addEventListener("error", function() {
+   console.log("image has not loaded")
+})
+
+console.log(image)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 --------------------------------
