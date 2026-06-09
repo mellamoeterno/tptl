@@ -68,7 +68,22 @@ so:
     }
 
 
-and also, this is commoly done with (prev'name of state') 
+
+current take;
+****
+ALSO in this^^^^ the function might as well be a named convetion callback, just look at how
+'function add' is, it declares 'add', while the function sinde setCount is declaring nothing,
+just being initialized()
+
+i feel like this have close logic as ex:
+
+setCount(prevValue => !prevValue)
+****
+earlier take;
+
+
+
+this is commoly done with (prev'name of state') 
 (prevCount) in case.
 
 
@@ -116,6 +131,15 @@ Also about .then() - it cant be done with:
 cus js doesnt like it.
 
 
+current take;
+****
+^^^^I GUESS this is because .then() is right under fetch() all times so maybe 
+javascript just reads:
+
+fetch().then()
+
+****
+earlier take;
 
 
 json 
@@ -132,7 +156,7 @@ the json method is basically the json from the browser made usable to us:
 await 
 
 ^^^^ this works by telling javascrip to wait fetch request and store the response if 
-assigned as a variable (const,let). Syntax:
+assigned to a variable (const,let). Syntax:
 
 const response = await fetch('url.../../')
 
@@ -142,8 +166,13 @@ const response = await fetch('url.../../')
 async
 
 
-^^^^ seems to be related to fixing this error ("await is only valid in async 
+^^^^ seems to be related to fixing this error: ("await is only valid in async 
 functions and the top level bodies of modules")
+
+
+**
+AND also prevent further errors related to module.
+**
 
 but even when we put the await inside a function (which was suppose to fix) 
 it doesnt fix:
@@ -199,8 +228,12 @@ the end of the Asynchronous operation.
 
 ---
 
-We also want to handle a promise rejection with async await syntax,
+We also need to handle promise rejections in async await syntax,
 and for this we need try, catch blocks.
+
+
+in which try, catch, finally blocks syntax is:
+
 
 try {
     // the code we want to try to execute
@@ -274,11 +307,11 @@ API requests: the body
 
 JSON.stringify
 
-were taking a javascript object and converts to json string.
-
+this is taking a javascript object and converting it to json string.
+(inverted logic from when we use response.json() which inverts json string to JS object)
 --
 
-by using headers:
+by using headers, in the fetch second parameter:
 
 headers: {
                 'Content-Type': 'application/json'
@@ -315,6 +348,55 @@ image.src = "http://..."
 
 
 
+This image constructor above seems to be a good way for the case of
+pre loading images, why is that?
+
+
+What happens?
+
+
+new Image() creates an HTMLImageElement in memory.
+
+Setting image.src tells the browser:
+
+"Start fetching this image from the server."
+
+The browser downloads it and stores it in its image cache.
+The image does not have to be visible on the page for the download to happen.
+Why is this useful?
+
+
+Imagine you have a slideshow.
+
+Without preloading:
+
+nextImage.src = "slide2.jpg"
+
+When the user clicks "Next":
+
+User clicks
+      ↓
+Browser starts downloading
+      ↓
+User waits...
+      ↓
+Image finally appears
+
+The user sees a delay or a blank area.
+
+
+
+With preloading:
+
+const preload = new Image()
+preload.src = "slide2.jpg"
+
+This happens as soon as the page loads:
+
+
+--
+
+
 /*
 Challenge:
 1. Create two event listeners. One should listen 
@@ -323,7 +405,7 @@ Challenge:
    and log “Image has NOT loaded”.
 */
 
-my resoultion***:
+my resolution***:
 
 
 image.addEventListener("load", function() {
@@ -335,6 +417,45 @@ image.addEventListener("error", function() {
 })
 
 console.log(image)
+
+
+--------------------------------
+
+Promise Challenge Exercise #1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
