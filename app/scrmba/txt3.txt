@@ -72,7 +72,7 @@ and also, this is commoly done with (prev'name of state')
 (prevCount) in case.
 
 
-and also another common way of doing is taking advatage of arrow function:
+and also another common way of doing is taking advantage of arrow function:
 
 
     function add() {
@@ -108,11 +108,162 @@ in a parameter, in a callback function
 by convetion we call it response
 
 
+
+Also about .then() - it cant be done with:
+
+ const response = .then(data...)
+
+cus js doesnt like it.
+
+
+
+
 json 
 
 the json method is basically the json from the browser made usable to us:
 
-.then(response => repsonse.json)
+.then(response => repsonse.json())
+
+
+
+--
+
+
+await 
+
+^^^^ this works by telling javascrip to wait fetch request and store the response if 
+assigned as a variable (const,let). Syntax:
+
+const response = await fetch('url.../../')
+
+
+
+
+async
+
+
+^^^^ seems to be related to fixing this error ("await is only valid in async 
+functions and the top level bodies of modules")
+
+but even when we put the await inside a function (which was suppose to fix) 
+it doesnt fix:
+
+function getDogImage() {
+    fetch('url')
+}
+
+
+so the true fix is:
+
+async function getDogImage() {
+    fetch('url')
+}
+
+
+
+--------------------------------
+
+Promise
+
+
+a promise seems to be a state of data in which it hasnt been 'delivered' yet.
+
+
+
+
+--
+
+.catch()
+
+handle promise rejection so we have the capability to do some code 
+(like showing a message to the user) 
+(or to try a different api)
+
+work similarly to .then()
+
+
+--
+
+
+.finally()
+
+also work similarly to .then()
+
+And its parameter will run at the end of the process wether the promise 
+rejected or resolved. (nothing to do with error handling, this is just to know
+.finally)
+
+finally method is useful in some situtions where you need some code to execute at
+the end of the Asynchronous operation.
+
+
+---
+
+We also want to handle a promise rejection with async await syntax,
+and for this we need try, catch blocks.
+
+try {
+    // the code we want to try to execute
+} catch(err) {
+    // the code to execute on an error
+} finally {
+    // code to execute at the end of the operation
+}
+
+
+--------------------------------
+
+response.ok
+
+
+from fetch() we can get a property called .ok
+which holds a boolean
+
+that indicates if the http was successful
+
+sometimes we need the server status because sometimes
+we'll not get error by catch.
+
+200-299: true
+404: false
+500: false
+
+so with .ok it we can just:
+
+    if (!response.ok){
+        throw new Error('There was a problem with the API')
+    }
+
+
+--------------------------------
+
+Taking APIs to the Next Level
+
+
+so theres:
+
+GET = getting data
+
+POST = posting data
+
+PUT = updating data/depending on api can be also post
+
+DELETE = deleting data
+
+PATCH and OPTIONS
+
+
+---
+
+how we make clear to the API what our intentions are? (posting, deleting, updating...)
+
+fetch can take a second parameter
+
+fetch('url',{method: 'POST'})
+
+
+'GET' is the default, its always there, but when in need of making something else
+its necessary to specify.
 
 
 
