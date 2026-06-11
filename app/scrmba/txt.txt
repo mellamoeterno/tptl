@@ -479,7 +479,9 @@ for (let property in character1) {
 }
 
 
-Loops through OBJECT KEYS
+loop iterates through OBJECT KEYS
+
+specifically targeting their enumerable properties.
 
 Used mainly for:
 
@@ -489,7 +491,7 @@ plain objects
 
 forEach
 
-is a js method for iterating over arrays, it is a more concise
+is a js method for loop iterates over arrays, it is a more concise
 way of iterating over arrays
 
 characters.forEach(function(character){
@@ -716,8 +718,8 @@ The professor said: "bacause we need to know what It
 previously was we need to use callback named prevTheme"
 
 
-This prev this seems to be related to the possibility of needing 
-to know the previous state of something.
+This prev this seems to be related to the need 
+of knowing the previous state of something. And it is.
 
 
 
@@ -747,7 +749,7 @@ theme, BECAUSE I DIDNT MAKE THE CODE AND DIDNT FKING KNOW)
 
 The right ways where 2 ways:
 
-1 specifying what i wanted from the useContext {value.theme}
+1 specifying what i wanted from the useContext {value.theme}                 **value refer to the object declared where ThemeContext parsing provide data is
 
 2 destructure directly in the const behind useContext {theme} {toggleFunction}
    -const { theme } = React.useContext(ThemeContext)
@@ -766,7 +768,7 @@ Menu component final touches
 about the Components inside each other.
 
 The professor said were doing this, but unlike using React.children it isnt
-fragile. (the adding of div thing) so it wont break if a div is added in the
+fragile. (the adding of div thing) so using context it wont break if a div is added in the
 way.
 
 
