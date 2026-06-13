@@ -487,6 +487,13 @@ on all of this code i dont get the 'url' call back preLoadImg(url)
 Why we needed it in the first place?
 
 
+--
+
+so basically the reason for that, its mainly to do with Asynchronous
+kind of code. Suppose To "hold" preLoadImg function, and also allows
+the function itself to be reused again.
+
+
 --------------------------------
 
 
