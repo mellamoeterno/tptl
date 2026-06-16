@@ -72,7 +72,7 @@ so:
 current take;
 ****
 ALSO in this^^^^ the function might as well be a named convetion callback, just look at how
-'function add' is, it declares 'add', while the function sinde setCount is declaring nothing,
+'function add' is, it declares 'add', while the function inside setCount is declaring nothing,
 just being initialized()
 
 i feel like this have close logic as ex:
@@ -496,6 +496,11 @@ the function itself to be reused again.
 
 --------------------------------
 
+
+The double pipe operator (||) in JavaScript is the logical OR operator 
+that performs short-circuit evaluation.  It returns the first truthy value 
+it encounters when evaluating operands from left to right; if all operands 
+are falsy, it returns the last operand. 
 
 
 
