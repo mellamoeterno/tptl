@@ -2,3 +2,142 @@ Continuation from txt 2 file:
 
 *****objective of file is to get the needed info to finish commerce project*******
 
+--------------------------------
+
+TypeScript Fundamentals - Intro to Pizza app - Exercise #2 
+
+
+    const order = orderQueue.find(
+        orderObj => orderObj.id === orderId
+    )
+
+
+In here theres a usage of .find 
+
+
+.find() calls your callback on each item, but it inspects the return value. 
+
+If your callback returns true, .find() immediately stops searching and hands you 
+that item. 
+
+
+
+**                                  {
+    const order = orderQueue.find(
+        orderObj => orderObj.id === orderId
+    )
+
+    order.status = "completed"
+
+    return order
+}**
+
+
+in that part is .find triggering order.status and return after getting the value true? sorta like a if statement?
+
+yes:
+
+.find() is literally a loop with an if statement inside it. 
+The callback orderObj => orderObj.id === orderId is just the condition for that if statement. 
+
+
+When that condition becomes true, .find() "triggers" and returns that item.
+
+so its sort of working like a if statement without {}
+
+
+
+--------------------------------
+
+TypeScript Fundamentals Defensive coding
+
+
+remember this code, it maybe useful in the future. 
+
+
+
+(remember that cashInRegister += selectedPizza.price was showing an 
+red line error "Object is possibly undefine").
+
+
+
+    if (!selectedPizza) {
+        console.error(`${pizzaName} does not exist in the menu`)
+        return
+    }
+    cashInRegister += selectedPizza.price
+
+
+
+Seems like with this kind of if statement typescript gets satisfied 
+
+And that by using 'return' in there it will never reach 'cashInRegister += selectedPizza.price'
+
+
+
+ALSO remember this:
+
+        if (!order) {
+        return
+    }
+
+
+So how is the teacher saying (by using 'return' in there it will never reach (order in  this case))
+actually even work? how is the return preventing from reaching that line?
+
+
+--------------------------------
+
+
+
+TypeScript Fundamentals Defining Custom Types
+
+
+
+Custom types
+
+
+Is basically a way of adding new types to anything,
+and is very useful for creating types around objects
+
+
+
+why in here:
+
+const menu: Pizza[] = [
+    { name: "Margherita", cost: 8 },
+    { name: "Pepperoni", cost: 10 },
+    { name: "Hawaiian", cost: 10 },
+    { name: "Veggie", cost: 9 },
+]
+
+i had to use [] on : Pizza[]
+
+while in here not
+
+addNewPizza(pizzaObj: Pizza)
+
+
+Answer: is because menu is an array.
+
+Pizza[] explicitly tells TypeScript that the variable holds a collection (list) of items.
+
+
+--------------------------------
+
+Nested object types Exercise #1
+
+
+
+Theres a way of using type inside another to
+define data:
+
+
+type Person = {
+    name: string
+    age: number
+    isStudent: boolean
+    address: Address                <<< here Address is another declared type
+}
+
+
