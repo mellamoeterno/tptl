@@ -47,6 +47,16 @@ so its sort of working like a if statement without {}
 
 
 
+
+MIND YOU that the function from the code above (orderId)
+
+was taking a parameter by a calling of the function
+
+and the value was (2) so orderId in there is 2
+
+
+
+
 --------------------------------
 
 TypeScript Fundamentals Defensive coding
@@ -139,5 +149,103 @@ type Person = {
     isStudent: boolean
     address: Address                <<< here Address is another declared type
 }
+
+
+
+
+--------------------------------
+
+Instead of 
+
+: Pizza[]
+
+
+We can also use
+
+Array<Pizza>
+
+
+--------------------------------
+
+Literal types
+
+
+
+We can use a string as a type:
+
+const myName2: "Bob" = "Bob"
+
+
+: "Bob" 
+
+
+literal types can be useful but is more commonly found with the concept called "unions"
+
+
+
+--------------------------------
+
+
+Unions
+
+
+we can use the single pipe to set an type that can be only 3 things or more.
+
+
+type UserRole = "guest" | "member" | "admin"
+
+let userRole: UserRole = "member"
+
+
+
+
+--------------------------------
+
+Update order status to use literal type unions - broad-block
+
+
+
+
+So basically here were getting a typescript red line, but it doesnt specify
+whats actually is going on, the only lead o had was that it was a error flag
+not on the declared value, but on the CALLING of the value (which was pushed)
+
+
+    const newOrder = { 
+        id: nextOrderId++, 
+        pizza: selectedPizza, 
+        status: "ordered" 
+        }
+        
+    orderQueue.push(newOrder)           <<the red line was here
+
+    
+Not in the declared  const newOrder, as 'normaly' happens.
+
+
+
+And also the error wasnt very helpfull. So keep in mind this may happen.
+
+
+
+The fix was to use the type Order where it was being declared
+
+
+const newOrder: Order = { id: nextOrderId++}
+
+
+
+--------------------------------
+
+
+
+
+
+
+
+
+
+
+--------------------------------
 
 

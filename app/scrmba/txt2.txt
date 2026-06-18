@@ -179,6 +179,7 @@ it doesnt fix:
 
 function getDogImage() {
     fetch('url')
+    ...await somewhere...
 }
 
 
@@ -186,6 +187,7 @@ so the true fix is:
 
 async function getDogImage() {
     fetch('url')
+    ...await somewhere...
 }
 
 
@@ -353,8 +355,8 @@ the promise is consumed.
 
 
 ---
-^^^^^in connection with the above (although in different class)                         (i say connection, in a probability kind of way cus idfk)
-Working with images asynchronously
+^^^^^in connection with the above (although in different class)                         (i say connection, in a probability kind of way cus idfk,
+Working with images asynchronously                                                      the professor said it)
 
 
 
@@ -409,6 +411,15 @@ preload.src = "slide2.jpg"
 This happens as soon as the page loads:
 
 
+
+**
+The Image() constructor is a pre-built JavaScript function that 
+creates a new <img> HTML element without attaching it to the DOM. 
+It is functionally equivalent to document.createElement('img') 
+but is specifically optimized for image preloading and managing offscreen images.
+**
+
+
 --
 
 
@@ -449,7 +460,7 @@ One detail on all of this i need to remember is the
 
 
     image.addEventListener("load", function() {
-      resolve(image);
+      resolve(Image);
     })
 
 
@@ -459,7 +470,7 @@ way was to use image   **a event listener parameter**
 
 and for some reason cant be (image.src) either. js dont like it.
 
-whole fix:
+whole code/ with also fix:
 
 
 
