@@ -413,4 +413,37 @@ If that makes sense, the method is producing a useful return value.
 
 --------------------------------
 
+Function return types
+
+
+function fetchUserDetails(username: string): User {
+    const user = users.find(user => user.username === username)
+    if (!user) {
+        throw new Error(`User with username ${username} not found`)
+    }
+    return user
+}
+
+
+
+by using : User right there in (username: string): User, we can define
+what type of data should be returned from our function.
+
+
+
+--------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
