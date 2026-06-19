@@ -197,6 +197,11 @@ type UserRole = "guest" | "member" | "admin"
 let userRole: UserRole = "member"
 
 
+ALSO unions dont mean just the above, they also mean:
+
+
+function name(identifier: string | number)
+
 
 
 --------------------------------
@@ -207,7 +212,7 @@ Update order status to use literal type unions - broad-block
 
 
 So basically here were getting a typescript red line, but it doesnt specify
-whats actually is going on, the only lead o had was that it was a error flag
+whats actually is going on, the only lead i had was that it was a error flag
 not on the declared value, but on the CALLING of the value (which was pushed)
 
 
@@ -238,12 +243,172 @@ const newOrder: Order = { id: nextOrderId++}
 --------------------------------
 
 
+With that problem chimpmonkey stuff about the "string" unlogical thing i stepped on:
+
+
+If you tried this instead:
+
+if (name === string) {
+    // ...
+}
+
+JavaScript would look for a variable named string.
+
+Since there isn't one, you'd get:
+
+ReferenceError: string is not defined
+
+
+
+SO IT HAS TO BE THIS DUMB SHIT:
+
+
+if (name === "string") {
+    // ...
+}
+
+
+BECAUSE IDFK.
+
+
+Also i gotta stop forgeting abt this:
+
+strict equality operator:
+
+5 === 5;        // true
+5 === "5";      // false
+true === 1;     // false
 
 
 
 
 
 
+in this code:
+
+return detail.name === identifier
+
+
+"This is checking if the name property of the current detail object is exactly equal to the identifier value. 
+If they match, true is returned; if not, false is returned."
+
+
+so that line (return detail.name === identifier) is going to return the boolean
+value of the evaluation.
+
+
+
+--
+
+
+
+why do i have to write return there before menu.find 
+I dont get it.
+
+return menu.find(detail =>..)
+
+
+Because menu.find(...) does find a pizza, but you're not doing anything with the result.
+
+
+
+---
+
+
+
+My question:
+would you say when i use find with an array function or array with objects, 
+i'll always have to return before like in return menu.find() ?
+
+
+
+
+
+Answer:
+
+
+
+
+The point is actually not:
+
+
+
+
+"Am I using find()?"
+
+
+
+
+The point is:
+
+
+"Do I want my function to return the result of find()?"
+
+
+
+
+
+
+Case 1: Yes, use return
+
+
+function getPizzaDetail(id: number) {
+    return menu.find(pizza => pizza.id === id)
+}
+
+const pizza = getPizzaDetail(2)
+
+
+
+getPizzaDetail() is supposed to give the caller a pizza, 
+so you return the result of find().
+
+
+
+
+
+
+Case 2: No, don't use return
+
+Suppose you only want to log the pizza:
+
+function printPizza(id: number) {
+    const pizza = menu.find(pizza => pizza.id === id)
+    console.log(pizza)
+}
+
+printPizza(2)
+
+
+
+No return is needed because the function's job is to print 
+something, not hand a value back.
+
+
+
+
+
+
+SO basically i have to watchout if the code inside the function or const is 
+doing something, or producing a value.
+
+
+
+
+BUT ALSO .find DOESNT AUTOMATICALLY RETURN THE VALUE
+
+
+
+So instead of memorizing every method, ask(Ai probably most times):
+
+Can I assign its result to a variable?
+
+const result = array.find(...)
+const filtered = array.filter(...)
+const exists = array.includes(...)
+const text = name.toUpperCase()
+
+If that makes sense, the method is producing a useful return value.
 
 
 --------------------------------
