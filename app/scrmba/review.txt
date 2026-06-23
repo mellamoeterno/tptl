@@ -1,0 +1,44 @@
+To use or not return:
+
+
+My question:
+would you say when i use find with an array function or array with objects, i'll always have to return before like in return menu.find() ?
+
+Answer:
+
+The point is actually not:
+
+"Am I using find()?"
+
+The point is:
+
+"Do I want my function to return the result of find()?"
+
+Case 1: Yes, use return
+function getPizzaDetail(id: number) {
+    return menu.find(pizza => pizza.id === id)
+}
+
+const pizza = getPizzaDetail(2)
+
+getPizzaDetail() is supposed to give the caller a pizza, so you return the result of find().
+
+Case 2: No, don't use return
+
+Suppose you only want to log the pizza:
+
+function printPizza(id: number) {
+    const pizza = menu.find(pizza => pizza.id === id)
+    console.log(pizza)
+}
+
+printPizza(2)
+
+No return is needed because the function's job is to print something, not hand a value back.
+
+
+BUT THIS IS BECAUSE THE .find DOESNT AUTOMATICALLY RETURN THE VALUE
+
+
+So with these it wont be necessary to return manually:
+
