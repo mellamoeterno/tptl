@@ -42,3 +42,33 @@ BUT THIS IS BECAUSE THE .find DOESNT AUTOMATICALLY RETURN THE VALUE
 
 So with these it wont be necessary to return manually:
 
+
+
+
+----------------------
+
+constructor:
+
+there are THREE types of constructors:
+
+Constructor functions = writing a letter by hand
+Classes = typing a letter on a computer
+
+constructor function:
+
+the constructor is a way of creating objects automatically
+
+passing unique data to the constructor to construct these objects
+
+"seems to be a reusable method to define properties and methods of objects we create"
+
+
+function Car(make, model, year, color) {
+	this.make = make,
+	this.model = model,
+	this.year = year,
+	this.color = color
+}
+^^^^ to use this constructor i'll need to create an instance of an object
+
+this function 'car' is a special method (Special methods in JavaScript are built-in or user-defined functions that trigger automatic behaviors)
