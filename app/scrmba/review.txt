@@ -72,3 +72,17 @@ function Car(make, model, year, color) {
 ^^^^ to use this constructor i'll need to create an instance of an object
 
 this function 'car' is a special method (Special methods in JavaScript are built-in or user-defined functions that trigger automatic behaviors)
+
+
+or user-defined functions that trigger automatic behaviors
+
+
+THE ACTUAL IMPORTANT ONE
+
+
+class constructor:
+it's a special syntax — a way of writing code that lets you define a template with properties and behaviors, then stamp out multiple objects that all share the same structure.
+
+when doing: class Dog { ... }
+
+This defines a new type of thing you can create. Dog becomes a special function (a constructor) that you call with new to make individual dog objects.
