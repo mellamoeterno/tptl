@@ -86,3 +86,31 @@ it's a special syntax — a way of writing code that lets you define a template 
 when doing: class Dog { ... }
 
 This defines a new type of thing you can create. Dog becomes a special function (a constructor) that you call with new to make individual dog objects.
+
+
+
+
+
+
+
+
+
+
+----
+
+
+
+
+Built in javascript constructors (already provided by JS)
+
+
+Constructor				What it does
+
+Date					Dates and times
+Promise				Async operations
+Map					Key-value pairs (any key type)
+Set					Unique values
+Error, TypeError, ReferenceError	Errors
+RegExp	Regular expressions
+Array					Arrays (though [] is more common)
+Object					Objects (though {} is more common)
