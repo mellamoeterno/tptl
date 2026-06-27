@@ -114,3 +114,31 @@ Error, TypeError, ReferenceError	Errors
 RegExp	Regular expressions
 Array					Arrays (though [] is more common)
 Object					Objects (though {} is more common)
+
+
+Rarely Used (You might never see these)
+
+Constructor				What it does
+
+String, Number, Boolean		Almost always use primitives instead
+WeakMap, WeakSet			Specialized memory-leak prevention
+Int8Array, Uint16Array, etc.		Binary data (advanced)
+ArrayBuffer, SharedArrayBuffer	Low-level binary memory
+BigInt64Array, BigUint64Array	Big integers in arrays
+DataView				Low-level binary access
+
+
+Web-Specific (Browser-only)
+
+Constructor				Where it works
+
+URL					Browsers + Node.js
+Headers, Request, Response		fetch API
+Blob, File				File handling
+FormData				Form submission
+
+
+
+
+
+--------------
