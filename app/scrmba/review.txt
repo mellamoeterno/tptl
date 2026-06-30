@@ -138,6 +138,24 @@ Blob, File				File handling
 FormData				Form submission
 
 
+--
+
+
+What If You Name Your Constructor the Same as a Built-in?
+Bad idea — let me show you why:
+
+javascript
+// DON'T DO THIS
+
+function Date() {
+    this.custom = true;
+}
+const myDate = new Date();  // Which Date? Yours or built-in?
+
+
+"Whenever you name your constructor the same as a built-in, expect the built-in to be OVERWRITTEN in your current scope. This breaks everything that expects the original Date, and other developers will hate debugging this."
+
+
 
 
 
