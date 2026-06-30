@@ -114,3 +114,49 @@ Error, TypeError, ReferenceError	Errors
 RegExp	Regular expressions
 Array					Arrays (though [] is more common)
 Object					Objects (though {} is more common)
+
+
+Rarely Used (You might never see these)
+
+Constructor				What it does
+
+String, Number, Boolean		Almost always use primitives instead
+WeakMap, WeakSet			Specialized memory-leak prevention
+Int8Array, Uint16Array, etc.		Binary data (advanced)
+ArrayBuffer, SharedArrayBuffer	Low-level binary memory
+BigInt64Array, BigUint64Array	Big integers in arrays
+DataView				Low-level binary access
+
+
+Web-Specific (Browser-only)
+
+Constructor				Where it works
+
+URL					Browsers + Node.js
+Headers, Request, Response		fetch API
+Blob, File				File handling
+FormData				Form submission
+
+
+--
+
+
+What If You Name Your Constructor the Same as a Built-in?
+Bad idea — let me show you why:
+
+javascript
+// DON'T DO THIS
+
+function Date() {
+    this.custom = true;
+}
+const myDate = new Date();  // Which Date? Yours or built-in?
+
+
+"Whenever you name your constructor the same as a built-in, expect the built-in to be OVERWRITTEN in your current scope. This breaks everything that expects the original Date, and other developers will hate debugging this."
+
+
+
+
+
+--------------
