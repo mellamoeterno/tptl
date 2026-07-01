@@ -158,5 +158,13 @@ const myDate = new Date();  // Which Date? Yours or built-in?
 
 
 
+How to Avoid This Problem
+Use Different Names (Best Practice) **CHECK IF EXISTS A BUILT IN CONSTRUCTOR**
+theres still always a chance you'll use a 
+ORRR just use typescript
+
+
+"Whenever you try to declare something with a name that already exists in the current scope, TypeScript's default behavior is to treat this as an error. The built-in types are always in scope (via lib.d.ts), so you'll get a 'duplicate identifier' error."
+
 
 --------------
