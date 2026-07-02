@@ -168,3 +168,19 @@ ORRR just use typescript
 
 
 --------------
+
+
+Promise:
+
+1. What’s inside the Promise constructor (logically speaking)
+Technical description:
+The Promise constructor takes a single argument called the executor function — a function that the constructor synchronously calls with two parameters: resolve and reject. Inside the executor, you typically start an async task, then call resolve(value) on success or reject(error) on failure.
+
+“Whatever async work you do, itll use resolve to send back the successful result, or reject to send back the error.’ The constructor’s job is to store those resolve/reject controls and later connect them to .then() or .catch().”
+
+
+2. When you use new Promise(...), what you’re expecting to get
+Technical description:
+new Promise(executor) returns a new Promise object in the pending state. That object has internal slots ([[PromiseState]], [[PromiseResult]], [[PromiseFulfillReactions]], etc.) and publicly exposes .then(), .catch(), and .finally() methods.
+
+“When you write new Promise(...), you get back a special ‘future ticket’ object. That ticket starts in ‘waiting mode’ (pending). It doesn’t have the final value yet. What you can do right away is hand that ticket to someone else, who can attach reactions using .then() — those reactions will automatically run later when the ticket changes to ‘done’ (fulfilled) or ‘failed’ (rejected).”
