@@ -67,7 +67,7 @@ remember this code, it maybe useful in the future.
 
 
 (remember that cashInRegister += selectedPizza.price was showing an 
-red line error "Object is possibly undefine").
+red line error "Object is possibly undefined").
 
 
 
@@ -213,7 +213,7 @@ Update order status to use literal type unions - broad-block
 
 So basically here were getting a typescript red line, but it doesnt specify
 whats actually is going on, the only lead i had was that it was a error flag
-not on the declared value, but on the CALLING of the value (which was pushed)
+not on the declared value, but on the CALLING of the value (which was pushed: push(newOrder))
 
 
     const newOrder = { 
@@ -236,7 +236,7 @@ And also the error wasnt very helpfull. So keep in mind this may happen.
 The fix was to use the type Order where it was being declared
 
 
-const newOrder: Order = { id: nextOrderId++}
+const newOrder: Order = { id: nextOrderId++....}
 
 
 
@@ -353,7 +353,7 @@ Case 1: Yes, use return
 
 
 function getPizzaDetail(id: number) {
-    return menu.find(pizza => pizza.id === id)
+    **return** menu.find(pizza => pizza.id === id)                          <<<<<basically find by itself DOESNT RETURN when used in flat logic like that
 }
 
 const pizza = getPizzaDetail(2)
@@ -397,9 +397,13 @@ doing something, or producing a value.
 
 BUT ALSO .find DOESNT AUTOMATICALLY RETURN THE VALUE
 
+SO HOW I KNOW IF A METHOD NEEDS RETURN OR NOT?????????????
 
 
-So instead of memorizing every method, ask(Ai probably most times):
+answer:
+
+
+So instead of memorizing EVERY METHOD, you'll ask(Ai probably most times):
 
 Can I assign its result to a variable?
 
@@ -433,17 +437,44 @@ what type of data should be returned from our function.
 
 --------------------------------
 
+Void return type Exercise #1
+
+
+Explicit return types in TypeScript are annotations that define the specific data type a function will return
 
 
 
+sometimes we want to explicitly say that a function doesnt return anything
+and its just perfoming a operation outside of itself
+
+
+function addNewPizza(pizzaObj: Pizza): void {
+    menu.push(pizzaObj)
+}
+
+
+and sometimes we may need to say a function will be a type (Order) but also undefined:
+
+Order | undefined
+
+
+why?
+
+
+The reason comes down to the fact that sometimes a function might not be able to return the type you want, 
+and in this case it would return undefined instead. thats why we may use (Order | undefined)
 
 
 
+--------------------------------
+
+
+TypeScript Fundamentals Add automatic ids to menu items
 
 
 
+Go back later to that addNewPizza function crap, i needed to understand the whole context but
+brain was burned out.
 
 
-
-
-
+--------------------------------

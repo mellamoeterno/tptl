@@ -134,6 +134,32 @@ console.log(a > 0 && b > 0);    //this is just the context of this one prob, oth
 // Expected output: false
 
 
+
+// Returns 'world' because both are truthy
+"hello" && "world"; // "world"
+
+// Returns false because the first operand is falsy
+false && "anything"; // false
+
+
+
+
+
+More generally, the operator returns the value of the first falsy operand encountered when 
+evaluating from left to right, or the value of the last operand if they are all truthy.
+
+
+
+
+
+current take
+****
+this && is a pain in the ass to understand, it has both properties of a ternary (sort of) and the properties of boolean operator.
+
+Seems to be context based and if the operand is boolean or something like a string it'll change its logic.
+****
+
+
 --------------------------------
 
 Mega challenge - overloaded avatar component
@@ -869,8 +895,66 @@ Toggle.button
 
 bubble effect
 
-I dont get it, the wrapped component by some others component
-<star> when clicked on was triggering an console.log in a parent component
+
+Suppose you have this React component:
+
+function App() {
+  return (
+    <div onClick={() => console.log("Parent clicked")}>
+      <button onClick={() => console.log("Button clicked")}>
+        Click Me
+      </button>
+    </div>
+  )
+}
+
+
+
+You might think only the button gets clicked.
+
+But because of event bubbling, this happens:
+
+✅ Button receives the click.
+Then the click bubbles up to the parent (div).
+Then it would continue bubbling to <body>, <html>, and finally the document.
+
+So the console prints:
+
+Button clicked
+Parent clicked
+
+Notice the event started on the button and bubbled upward.
+
+
+
+
+How do you stop bubbling?
+
+Sometimes you only want the button to react.
+
+function handleClick(event) {
+    event.stopPropagation()
+    console.log("Only button")
+}
+
+so when you have:
+
+<div onClick={() => console.log("Parent")}>
+    <button onClick={handleClick}>
+        Click
+    </button>
+</div>
+
+
+Clicking the button prints:
+
+Only button
+
+
+
+The parent never receives the click because you stopped the event from bubbling
+
+
 
 
 --------------------------------

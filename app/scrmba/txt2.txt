@@ -505,6 +505,11 @@ kind of code. Suppose To "hold" preLoadImg function, and also allows
 the function itself to be reused again.
 
 
+****
+Although i still dont 100% Get how that "hold" the function and allows to reuse works.
+****
+
+
 --------------------------------
 
 
