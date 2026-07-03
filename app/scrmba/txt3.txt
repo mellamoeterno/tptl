@@ -415,6 +415,17 @@ const text = name.toUpperCase()
 If that makes sense, the method is producing a useful return value.
 
 
+
+****
+current take:
+Hold on what?
+
+isnt the point understanding why find needed return in the first place, 
+so by those assigns of .find results to the variable mean what really????
+
+figure this out later.........
+****
+
 --------------------------------
 
 Function return types
