@@ -1,0 +1,17 @@
+send less code to the browser 
+(code splitting)
+
+cache expensive calculations to reuse from render to 
+render
+
+Avoid unnecessary re-renders
+
+Restructure the application
+
+
+--
+
+measure a perfomance problem before aplying techniques
+to improve perfomance
+
+*if aint broke dont fix*
