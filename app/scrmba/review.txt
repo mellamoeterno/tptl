@@ -192,6 +192,11 @@ new Promise(executor) returns a new Promise object in the pending state. That ob
 Going back on a few resolutions havent touched in a while:
 
 -------------- --------------
+Advanced React
+Reusability
+Challenge - add onClick event listener
+Exercise #1
+
 
 So in this code ive got to remember how calling of a func and using ()
 will immediately trigger it even while being inside a onClick for example.
@@ -231,3 +236,38 @@ wait for the onClick to be activaded.
 -----
 
 Ive made a 4 way process of remembering these scenarios, Its on Anki cards.
+
+
+--------------
+Advanced React
+Reusability
+Button - size prop
+Exercise #1
+
+
+For this one i have but one question
+
+How an IIFE compares to this function
+
+export default function Button({size, children, ...rest}) {
+    let sizeSM = {}
+    size === 'sm' ? sizeSM = 'button-small' : null
+    
+    size === 'lg' ? sizeSM = 'button-large' : null
+    
+    return (
+        <button className={sizeSM} {...rest}>
+        {children}
+        </button>
+    )
+}
+
+
+I do know as a fact that react makes the ternary evaluation right
+away, and that cus theres that return there the Button function 
+will return it and itll be displayed.
+
+But with that, i want to know if it could as well be considered 
+something that is being "immediately invoked", i know its not an IIFE,
+but its logic sure seem to be close to what IIFE name is 
+(immediately invoked function expression)
