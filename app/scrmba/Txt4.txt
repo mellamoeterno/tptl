@@ -1,0 +1,14 @@
+continuation on txt3:
+
+
+--------------------------------
+
+TypeScript Fundamentals Add automatic ids to menu items
+
+
+
+Go back later to that addNewPizza function crap, i needed to understand the whole context but
+brain was burned out.
+
+
+--------------------------------

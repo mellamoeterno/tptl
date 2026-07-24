@@ -160,7 +160,7 @@ const myDate = new Date();  // Which Date? Yours or built-in?
 
 How to Avoid This Problem
 Use Different Names (Best Practice) **CHECK IF EXISTS A BUILT IN CONSTRUCTOR**
-theres still always a chance you'll use a 
+theres still always a chance you'll use a
 ORRR just use typescript
 
 
@@ -184,3 +184,50 @@ Technical description:
 new Promise(executor) returns a new Promise object in the pending state. That object has internal slots ([[PromiseState]], [[PromiseResult]], [[PromiseFulfillReactions]], etc.) and publicly exposes .then(), .catch(), and .finally() methods.
 
 “When you write new Promise(...), you get back a special ‘future ticket’ object. That ticket starts in ‘waiting mode’ (pending). It doesn’t have the final value yet. What you can do right away is hand that ticket to someone else, who can attach reactions using .then() — those reactions will automatically run later when the ticket changes to ‘done’ (fulfilled) or ‘failed’ (rejected).”
+
+
+
+-------------- --------------
+
+Going back on a few resolutions havent touched in a while:
+
+-------------- --------------
+
+So in this code ive got to remember how calling of a func and using ()
+will immediately trigger it even while being inside a onClick for example.
+
+**Actually what ive got was an error, and what the AI said in scrimba wasnt correct**
+
+function App() {
+  const clicked = console.log('Logging in')
+  return (
+    <main>
+      <Button onClick={clicked()}>
+        <FcGoogle />
+        Log in with Google
+      </Button>
+    </main>
+  )
+}
+
+
+
+-----
+The workarround to the error:
+
+wrapping clicked in an event handler callback arrow function
+
+<Button onClick={() => clicked()}>
+
+this fix the error but the console.log still immediately gets called...
+
+
+Besides that, it does indeed get rid of the error, why?
+
+because that event handler callback arrow function mas the clicked function
+wait for the onClick to be activaded.
+
+
+-----
+
+Ive made a 4 way process of remembering these scenarios, Its on Anki cards.

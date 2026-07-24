@@ -4,7 +4,7 @@ Continuation from txt 2 file:
 
 --------------------------------
 
-TypeScript Fundamentals - Intro to Pizza app - Exercise #2 
+TypeScript Fundamentals - Intro to Pizza app - Exercise #2
 
 
     const order = orderQueue.find(
@@ -12,13 +12,13 @@ TypeScript Fundamentals - Intro to Pizza app - Exercise #2
     )
 
 
-In here theres a usage of .find 
+In here theres a usage of .find
 
 
-.find() calls your callback on each item, but it inspects the return value. 
+.find() calls your callback on each item, but it inspects the return value.
 
-If your callback returns true, .find() immediately stops searching and hands you 
-that item. 
+If your callback returns true, .find() immediately stops searching and hands you
+that item.
 
 
 
@@ -37,8 +37,8 @@ in that part is .find triggering order.status and return after getting the value
 
 yes:
 
-.find() is literally a loop with an if statement inside it. 
-The callback orderObj => orderObj.id === orderId is just the condition for that if statement. 
+.find() is literally a loop with an if statement inside it.
+The callback orderObj => orderObj.id === orderId is just the condition for that if statement.
 
 
 When that condition becomes true, .find() "triggers" and returns that item.
@@ -62,11 +62,11 @@ and the value was (2) so orderId in there is 2
 TypeScript Fundamentals Defensive coding
 
 
-remember this code, it maybe useful in the future. 
+remember this code, it maybe useful in the future.
 
 
 
-(remember that cashInRegister += selectedPizza.price was showing an 
+(remember that cashInRegister += selectedPizza.price was showing an
 red line error "Object is possibly undefined").
 
 
@@ -79,7 +79,7 @@ red line error "Object is possibly undefined").
 
 
 
-Seems like with this kind of if statement typescript gets satisfied 
+Seems like with this kind of if statement typescript gets satisfied
 
 And that by using 'return' in there it will never reach 'cashInRegister += selectedPizza.price'
 
@@ -155,7 +155,7 @@ type Person = {
 
 --------------------------------
 
-Instead of 
+Instead of
 
 : Pizza[]
 
@@ -176,7 +176,7 @@ We can use a string as a type:
 const myName2: "Bob" = "Bob"
 
 
-: "Bob" 
+: "Bob"
 
 
 literal types can be useful but is more commonly found with the concept called "unions"
@@ -216,15 +216,15 @@ whats actually is going on, the only lead i had was that it was a error flag
 not on the declared value, but on the CALLING of the value (which was pushed: push(newOrder))
 
 
-    const newOrder = { 
-        id: nextOrderId++, 
-        pizza: selectedPizza, 
-        status: "ordered" 
+    const newOrder = {
+        id: nextOrderId++,
+        pizza: selectedPizza,
+        status: "ordered"
         }
-        
+
     orderQueue.push(newOrder)           <<the red line was here
 
-    
+
 Not in the declared  const newOrder, as 'normaly' happens.
 
 
@@ -289,7 +289,7 @@ in this code:
 return detail.name === identifier
 
 
-"This is checking if the name property of the current detail object is exactly equal to the identifier value. 
+"This is checking if the name property of the current detail object is exactly equal to the identifier value.
 If they match, true is returned; if not, false is returned."
 
 
@@ -302,7 +302,7 @@ value of the evaluation.
 
 
 
-why do i have to write return there before menu.find 
+why do i have to write return there before menu.find
 I dont get it.
 
 return menu.find(detail =>..)
@@ -317,7 +317,7 @@ Because menu.find(...) does find a pizza, but you're not doing anything with the
 
 
 My question:
-would you say when i use find with an array function or array with objects, 
+would you say when i use find with an array function or array with objects,
 i'll always have to return before like in return menu.find() ?
 
 
@@ -360,7 +360,7 @@ const pizza = getPizzaDetail(2)
 
 
 
-getPizzaDetail() is supposed to give the caller a pizza, 
+getPizzaDetail() is supposed to give the caller a pizza,
 so you return the result of find().
 
 
@@ -381,7 +381,7 @@ printPizza(2)
 
 
 
-No return is needed because the function's job is to print 
+No return is needed because the function's job is to print
 something, not hand a value back.
 
 
@@ -389,7 +389,7 @@ something, not hand a value back.
 
 
 
-SO basically i have to watchout if the code inside the function or const is 
+SO basically i have to watchout if the code inside the function or const is
 doing something, or producing a value.
 
 
@@ -420,7 +420,7 @@ If that makes sense, the method is producing a useful return value.
 current take:
 Hold on what?
 
-isnt the point understanding why find needed return in the first place, 
+isnt the point understanding why find needed return in the first place,
 so by those assigns of .find results to the variable mean what really????
 
 figure this out later.........
@@ -458,6 +458,12 @@ Explicit return types in TypeScript are annotations that define the specific dat
 sometimes we want to explicitly say that a function doesnt return anything
 and its just perfoming a operation outside of itself
 
+****
+current take:
+Maybe this could be of use into my function Section() {}
+which is of use only for Object.assign to make the index file and imports.
+****
+
 
 function addNewPizza(pizzaObj: Pizza): void {
     menu.push(pizzaObj)
@@ -472,7 +478,7 @@ Order | undefined
 why?
 
 
-The reason comes down to the fact that sometimes a function might not be able to return the type you want, 
+The reason comes down to the fact that sometimes a function might not be able to return the type you want,
 and in this case it would return undefined instead. thats why we may use (Order | undefined)
 
 
@@ -487,5 +493,84 @@ TypeScript Fundamentals Add automatic ids to menu items
 Go back later to that addNewPizza function crap, i needed to understand the whole context but
 brain was burned out.
 
+
+--------------------------------
+***curriculum ***
+
+while refactoring my page for perfomance ive found somethings to remember.
+
+while using Object.assign(SectionType)
+
+if i wanted the function SectionType to actually display what it was returning as parent:
+
+function SectionType() {
+    return (
+    <main
+    className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    </main>
+    )
+}
+
+so that it would wrap the other components in it i had to:
+
+Make SectionType accept children
+
+
+
+function SectionType({ children }: SectionProps)
+
+
+
+and as ive found today, what mostly in typescript always will complain
+for a type, which are variable parameters, i had to assign a type (SectionProps)
+
+
+
+
+
+...Annd at the end of the day it was all for nothing:
+
+
+So yes...
+
+Right now, this component:
+
+function SectionType({ children }) {
+  return <main>{children}</main>;
+}
+
+is doing nothing, because it is never called.
+
+It's like writing:
+
+function Hello() {
+  console.log("Hello!");
+}
+
+function Bye() {
+  console.log("Bye!");
+}
+
+Hello.Bye = Bye;
+
+
+
+it seems the Object.assign, and calling the <Section.ProfileSection/> isnt
+doing i thought it was.
+
+
+I thought that because the function was passed into const Section it sorta
+was taking the main with children in it, as i was explicitly using return in there.
+
+
+My objective with making that function accept children was that previously
+i had seen that both cursor and gpt used it with some JSX inside the function
+used as parameter for (ProductCard) and (Section) (ProductCard had also type since
+the beginning) and i presumed it was somehow wrapping the components, as it was being Used
+(mainly in cursor code) as both function and TYPE into the main export function
+(const ProductCard) or (const Section) 'in my code' And it seems it had other
+purpose than the one i thought.
+
+This may get more easy to understand when i get more hang of Object.assign
 
 --------------------------------
