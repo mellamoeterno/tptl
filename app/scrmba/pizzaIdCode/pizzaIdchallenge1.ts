@@ -19,7 +19,9 @@ const menu: Pizza[] = [
 
 let cashInRegister = 100
 let nextOrderId = 1
+let nextPizzaId = 1
 const orderQueue: Order[] = []
+
 
 function addNewPizza(pizzaObj: Pizza): void {
     menu.push(pizzaObj)
@@ -53,9 +55,9 @@ addNewPizza({
 
 
 function placeOrder(pizzaName: string): Order | undefined {
-    const selectedPizza = menu.find(pizzaObj => pizzaObj.name === pizzaName)
+    const selectedPizza = menu.find(pizzaObj => pizzaObj.name === pizzaName)//pizzaName seems to be working because if is not catching the !selectedPizza
 
-    if (!selectedPizza) {
+    if (!selectedPizza) {                                                   //so if i had to guess .find is just getting the first pizza name and assigned to selectedPizza
         console.error(`${pizzaName} does not exist in the menu`)
         return
     }
