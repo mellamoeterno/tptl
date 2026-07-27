@@ -62,7 +62,7 @@ function placeOrder(pizzaName: string): Order | undefined {
         return
     }
 
-    cashInRegister += selectedPizza.price
+    cashInRegister += selectedPizza.price       //cash in register = 100 | slected pizza price = probably 8 cus its prob margherita
 
     const newOrder: Order = {
         id: nextOrderId++, pizza: selectedPizza, status: "ordered"
