@@ -27,6 +27,10 @@ function addNewPizza(pizzaObj: Pizza): void {
     menu.push(pizzaObj)
 }
 
+//purpose of file is to understand the messy formated code the professor gave to me in scrimba
+//(well maybe not anymore cus i fixed it already)
+
+
 /**
  * Challenge part 1: Make it so we can use a global variable to track the nextPizzaId
  * and use the same trick we use with `nextOrderId++` when you're calling addNewPizza.
@@ -55,7 +59,7 @@ addNewPizza({
 
 
 function placeOrder(pizzaName: string): Order | undefined {
-    const selectedPizza = menu.find(pizzaObj => pizzaObj.name === pizzaName)//pizzaName seems to be working because if is not catching the !selectedPizza
+    const selectedPizza = menu.find(pizzaObj => pizzaObj.name === pizzaName)//pizzaName seems to be working because if is not catching the !selectedPizza (scrimba console)
 
     if (!selectedPizza) {                                                   //so if i had to guess .find is just getting the first pizza name and assigned to selectedPizza
         console.error(`${pizzaName} does not exist in the menu`)
@@ -70,11 +74,11 @@ function placeOrder(pizzaName: string): Order | undefined {
 
     orderQueue.push(newOrder)
 
-    return newOrder
-}
+    return newOrder                             //return newOrder because its value its not assigned to any variable, so placeOrder will have it.
+}                                               //Thats why placeOrder has type of Order (id, pizza, status)
 
 function completeOrder(orderId: number): Order | undefined {
-    const order = orderQueue.find(
+    const order = orderQueue.find(              //last orderQueue will have the last id, pizza, and status in it. this const order will now have the 'id'
         order => order.id === orderId
     )
 
@@ -83,16 +87,16 @@ function completeOrder(orderId: number): Order | undefined {
         return
     }
 
-    order.status = "completed"
+    order.status = "completed"                 //rewrites status from ordered to completed
 
-    return order
+    return order                               //same thing like previous return newOrder
 }
 
 export function getPizzaDetail(identifier: string | number): Pizza | undefined {
 
     if (typeof identifier === "string") {
-        return menu.find(pizza => pizza.name.toLowerCase() === identifier.toLowerCase())
-    }
+        return menu.find(pizza => pizza.name.toLowerCase() === identifier.toLowerCase())        
+    }                                                                                           
 
     else if (typeof identifier === "number") {
         return menu.find(pizza => pizza.id === identifier)
