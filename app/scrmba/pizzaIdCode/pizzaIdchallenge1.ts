@@ -95,9 +95,9 @@ function completeOrder(orderId: number): Order | undefined {
 export function getPizzaDetail(identifier: string | number): Pizza | undefined {
 
     if (typeof identifier === "string") {
-        return menu.find(pizza => pizza.name.toLowerCase() === identifier.toLowerCase())        
-    }                                                                                           
-
+        return menu.find(pizza => pizza.name.toLowerCase() === identifier.toLowerCase())        //here in .find this lowercase and === logic looks super weird but
+    }                                                                                           //its just the logic to either get the pizza name or pizza id by
+                                                                                                //calling getPizzaDetail and parsing the desired pizza want to know abt
     else if (typeof identifier === "number") {
         return menu.find(pizza => pizza.id === identifier)
     }
