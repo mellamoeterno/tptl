@@ -268,6 +268,60 @@ away, and that cus theres that return there the Button function
 will return it and itll be displayed.
 
 But with that, i want to know if it could as well be considered 
-something that is being "immediately invoked", i know its not an IIFE,
-but its logic sure seem to be close to what IIFE name is 
+something that is being "immediately invoked", i know its not an IIFE!,
+but its logic sure seem to be close to what IIFE name is implying 
 (immediately invoked function expression)
+
+Definitive Answer: 
+
+The timing is similar in that both run "right away" in their context:
+
+IIFE: runs immediately upon definition
+
+Your ternaries: run immediately when the Button function is called
+
+
+So yeah i was right.
+
+--------------
+Advanced React
+Reusability
+The React.Children API
+Exercise #1
+
+
+An old thing i'm remembering
+
+export default function Menu({ children }) {
+
+        <div className="menu">
+            {React.Children.map(children, (child) => {
+                return React.cloneElement(child, {
+                    toggle,
+                    open
+                })
+            })}
+        </div>
+        }
+
+
+the important part is .map(children, (child) => {...})
+
+I didnt got to go deeper into understanding this, a question i have
+is how theres 'children' in there where should be a callback, and after a comma,
+the actuall callback (child), how is this working and why the use of children in there,
+also it seems that that children is the passed prop to Menu function. So whats going on here. 
+
+
+Answer:
+
+So actually, React.Children.map() takes two parameters.
+
+1 first - The children to iterate over
+
+2 second - The callback function to apply to each  (just like normaly is with .map)
+
+So the whole code works to allows each MenuItem to receive toggle and open props 
+without having to pass them manually.
+
+--------------
