@@ -187,6 +187,53 @@ new Promise(executor) returns a new Promise object in the pending state. That ob
 
 
 
+
+--------------
+
+
+
+
+There are many ways the callback present itself
+
+when the callback has empty parentheses ()
+
+	setCount(function() {
+                return count + 1                    
+    })
+What this says:
+"I'm telling setCount: 'Here's a function that takes no incoming data from you. Instead, it does the code inside {}. Whats the point?: well using empty () is mostly a habit or a mistake — not a best practice.'"
+
+when the callback is as alone as it can be 
+
+setTimeout(() => {
+    console.log("Time's up!")
+    document.title = "Done"
+}, 1000)
+"The syntax above is a alternative to function() callback, its the same code but better"
+
+
+when the call back has no curly braces {}
+
+playlistArr.map(playlistItems => playlistItems.toUpperCase())
+"no curly braces in the syntax means to follow this different one with access operator, and probably others as well"
+
+when the call back is in single parameter
+
+playlistArr.map(playlistItems => {
+  return playlistItems.toUpperCase();
+})
+"when you want to shorten the function(callback) kind of callback or use some detail functionality of =>"
+
+when the call back is in single parameter BUT wraped in ()
+
+playlistArr.map((playlistItems) => {
+  return playlistItems.toUpperCase();
+})
+"In this one theres literally no difference, except that sometimes you may need to add another callback (callback1, callback2) so adding it previously may be "beneficial"   ."
+
+
+
+
 -------------- --------------
 
 Going back on a few resolutions havent touched in a while:
