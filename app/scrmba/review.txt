@@ -234,6 +234,37 @@ playlistArr.map((playlistItems) => {
 
 
 
+--------------
+
+
+
+
+React.children:
+
+utility that provides methods for interacting with a components direct children elements\
+
+being the methods:
+ .map() forEach()..etc                        (React.children.map())     (React.children.forEach())
+
+when using React.children.map()
+is different than javascript .map
+
+So the first thing needed to provide is the array to interact with.
+
+Characteristics:
+Works only on arrays.
+Returns a new array.
+Does not modify the original array.
+Commonly used to transform data.
+
+Best Practices
+Keep utilities pure (no side effects). 
+Place them in dedicated files (e.g., utils/, helpers/).
+Avoid passing utility functions deeply through props—import them directly.
+Use ES6 modules (export/import) for clean sharing across components.
+
+
+
 -------------- --------------
 
 Going back on a few resolutions havent touched in a while:
