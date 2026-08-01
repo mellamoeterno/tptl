@@ -187,6 +187,84 @@ new Promise(executor) returns a new Promise object in the pending state. That ob
 
 
 
+
+--------------
+
+
+
+
+There are many ways the callback present itself
+
+when the callback has empty parentheses ()
+
+	setCount(function() {
+                return count + 1                    
+    })
+What this says:
+"I'm telling setCount: 'Here's a function that takes no incoming data from you. Instead, it does the code inside {}. Whats the point?: well using empty () is mostly a habit or a mistake — not a best practice.'"
+
+when the callback is as alone as it can be 
+
+setTimeout(() => {
+    console.log("Time's up!")
+    document.title = "Done"
+}, 1000)
+"The syntax above is a alternative to function() callback, its the same code but better"
+
+
+when the call back has no curly braces {}
+
+playlistArr.map(playlistItems => playlistItems.toUpperCase())
+"no curly braces in the syntax means to follow this different one with access operator, and probably others as well"
+
+when the call back is in single parameter
+
+playlistArr.map(playlistItems => {
+  return playlistItems.toUpperCase();
+})
+"when you want to shorten the function(callback) kind of callback or use some detail functionality of =>"
+
+when the call back is in single parameter BUT wraped in ()
+
+playlistArr.map((playlistItems) => {
+  return playlistItems.toUpperCase();
+})
+"In this one theres literally no difference, except that sometimes you may need to add another callback (callback1, callback2) so adding it previously may be "beneficial"   ."
+
+
+
+
+--------------
+
+
+
+
+React.children:
+
+utility that provides methods for interacting with a components direct children elements\
+
+being the methods:
+ .map() forEach()..etc                        (React.children.map())     (React.children.forEach())
+
+when using React.children.map()
+is different than javascript .map
+
+So the first thing needed to provide is the array to interact with.
+
+Characteristics:
+Works only on arrays.
+Returns a new array.
+Does not modify the original array.
+Commonly used to transform data.
+
+Best Practices
+Keep utilities pure (no side effects). 
+Place them in dedicated files (e.g., utils/, helpers/).
+Avoid passing utility functions deeply through props—import them directly.
+Use ES6 modules (export/import) for clean sharing across components.
+
+
+
 -------------- --------------
 
 Going back on a few resolutions havent touched in a while:
@@ -268,6 +346,60 @@ away, and that cus theres that return there the Button function
 will return it and itll be displayed.
 
 But with that, i want to know if it could as well be considered 
-something that is being "immediately invoked", i know its not an IIFE,
-but its logic sure seem to be close to what IIFE name is 
+something that is being "immediately invoked", i know its not an IIFE!,
+but its logic sure seem to be close to what IIFE name is implying 
 (immediately invoked function expression)
+
+Definitive Answer: 
+
+The timing is similar in that both run "right away" in their context:
+
+IIFE: runs immediately upon definition
+
+Your ternaries: run immediately when the Button function is called
+
+
+So yeah i was right.
+
+--------------
+Advanced React
+Reusability
+The React.Children API
+Exercise #1
+
+
+An old thing i'm remembering
+
+export default function Menu({ children }) {
+
+        <div className="menu">
+            {React.Children.map(children, (child) => {
+                return React.cloneElement(child, {
+                    toggle,
+                    open
+                })
+            })}
+        </div>
+        }
+
+
+the important part is .map(children, (child) => {...})
+
+I didnt got to go deeper into understanding this, a question i have
+is how theres 'children' in there where should be a callback, and after a comma,
+the actuall callback (child), how is this working and why the use of children in there,
+also it seems that that children is the passed prop to Menu function. So whats going on here. 
+
+
+Answer:
+
+So actually, React.Children.map() takes two parameters.
+
+1 first - The children to iterate over
+
+2 second - The callback function to apply to each  (just like normaly is with .map)
+
+So the whole code works to allows each MenuItem to receive toggle and open props 
+without having to pass them manually.
+
+--------------
