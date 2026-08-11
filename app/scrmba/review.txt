@@ -264,6 +264,60 @@ Avoid passing utility functions deeply through props—import them directly.
 Use ES6 modules (export/import) for clean sharing across components.
 
 
+--------------
+
+
+
+about function and const
+
+Use const for function expressions by default.  It prevents accidental 
+reassignment and aligns with modern ES6+ standards for immutability.
+Use function declarations when you need hoisting (e.g., defining utility 
+functions that are called before their definition in the file) or when you 
+prefer explicit named functions for better stack traces. 
+In React, const is predominantly used for functional components to ensure the 
+component reference remains stable and to avoid hoisting-related confusion in JSX. 
+
+
+
+
+
+The primary difference between function declarations and const function expressions 
+in JavaScript is hoisting.  Function declarations are hoisted to the top of their scope, 
+meaning they can be called before they appear in the code.  In contrast, const function expressions 
+(including arrow functions) are not hoisted; attempting to call them before their declaration results in a ReferenceError. 
+
+
+it seems function is used loads because of this flexibility for some reason, 
+it may have deeper meaning the way this works (being able to call before its declaration)
+
+
+
+--------------
+
+
+
+what the .length does in javascript
+
+In JavaScript, the .length property is a built-in attribute that returns the size or count of 
+elements/characters depending on the object type.  It is not a method, so it is accessed without parentheses (e.g., array.length). 
+
+Arrays 
+For arrays, .length returns the number of slots in the array, which is an unsigned 32-bit integer 
+always greater than the highest index.  It may exceed the actual number of elements if the array is sparse. 
+Setting this property dynamically truncates the array if the new value is smaller, or extends it with empty slots if larger. 
+
+Strings
+For strings, .length returns the number of UTF-16 code units occupied by the string.  
+This counts all characters, including spaces and punctuation. Because JavaScript uses UTF-16 encoding, certain characters 
+like emojis may count as two code units, causing the length to differ from the actual character count. 
+
+Functions
+For functions, .length indicates the number of formal parameters the function expects.  
+It counts only parameters before the first one with a default value and excludes rest parameters (e.g., ...args).  
+This is distinct from arguments.length, which reflects the actual number of arguments passed at runtime. 
+
+
 
 -------------- --------------
 
