@@ -319,6 +319,33 @@ This is distinct from arguments.length, which reflects the actual number of argu
 
 
 
+
+--------------
+
+
+useState details
+
+i think that when using state setter (setFormData) also is  (current/previous)
+
+by that i mean, the update function assigned to setFormData, returned from useState as we know, when doing structuring, is in a way also a  (current/previous) related to the first array
+formData. Meaning its its sort of connected to it with this function.
+
+I took that from grey opera:
+What is prev in React?
+prev (short for "previous") is a common naming convention for the previous state value in React's state updater functions. It's not a keyword or reserved term - you could name it anything (like previousState, oldState, etc.), but prev is widely used by convention.
+
+How It Works
+When you pass a function to a state setter (like setFormData), React gives you the current/previous state value as the first argument to that function.
+
+
+prev details
+
+prevState and prev are the same thing, if we ever come across the use of prevState. 
+
+
+
+
+
 -------------- --------------
 
 Going back on a few resolutions havent touched in a while:
