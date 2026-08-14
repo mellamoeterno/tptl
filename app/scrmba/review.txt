@@ -366,11 +366,24 @@ const order = orderQueue.find(
     orderObj => orderObj.id === orderId
 )
 
-.find() needs you to give it a function that tells it how to check each item. That function takes one item from the array (which we're calling orderObj), looks at that item's id, compares it to your orderId, and returns true or false. .find() runs this function on every item until it gets true, then gives you that item.
+.find() needs you to give it a function that tells it how to check each item. That function takes one item from the array 
+(which we're calling orderObj), looks at that item's id, compares it to your orderId, and returns true or false. .find() 
+runs this function on every item until it gets true, then gives you that item.
 
 This means .find will always (most times probably) need that syntax               find(orderObj => orderObj.id === orderId) to work properly.
 
 
+
+--------------
+
+
+What .push() is (the general concept)
+
+let arr = [1, 2, 3];
+arr.push(4);
+
+".push() is a built-in action that every array has. It takes whatever you give it and adds it to the end of the array. 
+The array gets longer by one item. After arr.push(4), the array [1,2,3] becomes [1,2,3,4]
 
 
 
