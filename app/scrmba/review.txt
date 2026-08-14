@@ -387,6 +387,23 @@ The array gets longer by one item. After arr.push(4), the array [1,2,3] becomes 
 
 
 
+--------------
+
+
+
+			+=    operator
+
+
+The += addition assignment operator adds the value of the right operand to a variable and assigns the result back to that variable, 
+effectively acting as a shorthand for x = x + y. 
+
+Like:
+cashInRegister += selectedPizza.price  
+
+
+
+
+
 
 
 
