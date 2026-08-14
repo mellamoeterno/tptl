@@ -343,6 +343,37 @@ prev details
 prevState and prev are the same thing, if we ever come across the use of prevState. 
 
 
+--------------
+
+
+.find
+
+why sometimes when using .find some people use: 
+
+    const order = orderQueue.find(
+        orderObj => orderObj.id === orderId
+    )
+
+why not just:
+
+    const order = orderQueue.find(
+        id === orderId
+    )
+How it works:
+
+
+const order = orderQueue.find(
+    orderObj => orderObj.id === orderId
+)
+
+.find() needs you to give it a function that tells it how to check each item. That function takes one item from the array (which we're calling orderObj), looks at that item's id, compares it to your orderId, and returns true or false. .find() runs this function on every item until it gets true, then gives you that item.
+
+This means .find will always (most times probably) need that syntax               find(orderObj => orderObj.id === orderId) to work properly.
+
+
+
+
+
 
 
 
