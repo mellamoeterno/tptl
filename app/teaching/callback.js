@@ -267,3 +267,57 @@ function greetUser(name, callback) {
   console.log("Hello, " + name);        
   //should invoke callback(); if we want sayGoodbye to work and the delay to work as well.                                                         
 }
+
+
+                                                        //so the goodbye message wont show on output.
+
+
+                                                        //but with all of this heres my question for you, what is the one that actually matter
+                                                        //to make the 'delayed' execution? the calling of callback(); inside greetUser
+                                                        //or the parsing of sayGoodBye to callback with javascript assigning it in sequence?
+
+                                                        //to make this clear.
+                                                        //It’s not a time delay — it’s an execution order delay. Thats what really matters
+                                                        //in this code.
+
+
+
+
+/* *****keep writing later***** */
+//Now lets remember what the main purpose of what callback is:
+
+
+//Callback is a function that is passed as an argument to another function.
+
+//so to make that delayed execution is purely by the programmer choice.
+
+function greetUser(callback) {
+    callback();
+}
+
+greetUser("passMeButter");
+
+
+// 4. PROPS in React - NOT callbacks (usually)
+//    Props are just DATA being passed to components
+
+function UserCard(props) {
+    //     👆 props is just DATA (an object)
+    // It's NOT a callback (unless someone specifically passes a function)
+    return <div>{props.name}</div>;
+}
+
+/* 
+A callback is a named convention, i may have already said that callback is not the same as props
+and not the same as some other already named things like index (which you have to at least search if it
+already exist before being too creative in the naming of a prop) but the 'callback' javascript wont
+read it like index, you can name it anything!
+
+But! if youre going to do some callback logic, you need
+to name it callback, otherwise you will get confusing in your own code, and your code will be confusing to others.
+
+Thats the purpose of the name callback! not to make javascript read some pre made logic parameter like it is in index! (i say this like this
+because it seems theres no official way of calling what parameters like index are, correct me if im wrong.)
+
+
+ */
