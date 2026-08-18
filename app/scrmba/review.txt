@@ -193,6 +193,11 @@ new Promise(executor) returns a new Promise object in the pending state. That ob
 
 
 
+CALLBACK
+
+i love call back i love call back i love call bak bak bak bak...
+
+
 There are many ways the callback present itself
 
 when the callback has empty parentheses ()
@@ -201,7 +206,15 @@ when the callback has empty parentheses ()
                 return count + 1                    
     })
 What this says:
-"I'm telling setCount: 'Here's a function that takes no incoming data from you. Instead, it does the code inside {}. Whats the point?: well using empty () is mostly a habit or a mistake — not a best practice.'"
+"I'm telling setCount: 'Here's a function that takes no incoming data from you. Instead, it does the code inside {}. Whats the point?: 
+well using empty () is mostly a habit or a mistake — not a best practice.'"
+
+
+update: it seems  that function() isnt a callback att all, if i rename it 
+to some shit like yadayada() javascript will complain.
+
+**WHAT IS ACTUALLY happenin in the above is that function isnt the callback itself, 
+the callback is inside the parameter, thats why im calling this a empty callback**
 
 when the callback is as alone as it can be 
 
@@ -215,7 +228,8 @@ setTimeout(() => {
 when the call back has no curly braces {}
 
 playlistArr.map(playlistItems => playlistItems.toUpperCase())
-"no curly braces in the syntax means to follow this different one with access operator, and probably others as well"
+"no curly braces in the syntax means to follow this different kind of code that 
+has this access operator, and probably others as well"
 
 when the call back is in single parameter
 
@@ -229,7 +243,14 @@ when the call back is in single parameter BUT wraped in ()
 playlistArr.map((playlistItems) => {
   return playlistItems.toUpperCase();
 })
-"In this one theres literally no difference, except that sometimes you may need to add another callback (callback1, callback2) so adding it previously may be "beneficial"   ."
+"In this one theres literally no difference, except that sometimes you may need to add another 
+callback (callback1, callback2) so adding it previously may be "beneficial"   ."
+
+
+
+
+
+
 
 
 
