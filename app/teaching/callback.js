@@ -37,3 +37,49 @@ not so fruitfull.
 ******
 
 */
+
+/* 
+
+You may have learned about callback, or will most likely learn callback with these syntaxes: 
+
+ */
+
+/* function placeOrder(pizzaName){
+    if (!pizzaName) {
+        console.error(`${pizzaName} does not exist in The menu`)
+    }
+} */
+
+
+/* function nameReceive(name) {
+    console.log(name)
+} */
+
+
+/* function dataProduct(productName) {
+    console.log(productName)
+} */
+
+
+
+/* 
+But what any of this actually means? I DONT KNOW ABOUT CALLBACK, thats why im here, you may say
+
+ */
+
+
+/* 
+Normally people will say to you callback is:
+
+A function that is passed as an argument to another function
+
+
+But at first you may think how is it a function?
+
+well this is because whats inside of the () parameter, can be called anything like:
+ */
+
+
+function myData(anything) {
+    console.log(anything)
+}
