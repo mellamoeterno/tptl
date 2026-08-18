@@ -83,3 +83,63 @@ well this is because whats inside of the () parameter, can be called anything li
 function myData(anything) {
     console.log(anything)
 }
+
+
+
+/* 
+And not only that, but the purpose of callback is so that you pass in a function to it, and call for it
+
+ */
+
+/* 
+So you understand better lets see this:
+
+For a fact theres something called callback hell, in it you have this code:
+
+ */
+
+function task1(callback) {
+    timedFunctionality(() => {                  //for now just imagine that this timeFunctionality is something i created somewhere and by
+        console.log("task 1 done")              //calling it, with whats inside it will display whats inside after a set of time **that },4000)** 
+    },4000)                                     //dont worry about the syntax just focus on this logic
+}
+
+                                                //if you dont know what syntax is, is just the way code is formated and written like.
+                                                //like the placement of things and organization.
+
+
+                                                //with that code the callback works by receiving a whole function, but this function look like
+                                                //this:
+
+task1(() => {
+    funcDoSomething()
+})
+
+                                                //you may see that this is calling for the task1 not the callback
+                                                //so how is that callback receiveing if im not calling for it
+
+                                                //what happens is that when we call a function in javascript and we do like:
+
+task1()                                                
+
+                                                //javascript will read that and if i put something inside () and at the same time
+                                                //if i already had that callback passed when created the function 'task1 (callback)'
+                                                //then javascript will assign to that callback wathever
+                                                //i pass when calling for the function:
+
+task1(() => {
+    funcDoSomething()                           
+})     
+
+
+
+                                                //and another important thing to distinct and remember, is that that callback is named convetion!
+                                                //meaning that it can be named anything
+
+/* 
+You may say also, so whats next about this so called callback hell? Well this video aint about it,
+i just wanted to explain a little bit of what goes into the callback hell, which is intricate to 
+callbacks itself. This bit of knowledge will still prove useful when you get to learn
+about callback hell though.
+
+ */
