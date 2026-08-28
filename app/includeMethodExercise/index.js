@@ -23,11 +23,11 @@ function render(){
     list.innerHTML = html //innerHTML allows you to get or set the HTML content contained within a specific element.
 }
 
-/* function detectDuplicates() {
+function detectDuplicates() {
     if (itemInput.includes(itemInput * 2)) {
-        throw new error = "shits not right son"                                     keep figuring the resolution
-    } fu
-} */
+        throw new error = "shits not right son"                                         //<<< try to remeber the true fix this, that function detectDuplicates isnt my own true fix.                                
+    } 
+}
 
 render()            //The list is drawn immediately when the JavaScript loads. But this is not so necessary 
                     // in this case cause:

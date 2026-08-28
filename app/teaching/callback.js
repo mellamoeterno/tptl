@@ -99,10 +99,15 @@ function myData(anything) {
 /*
 And not only that, but the purpose of callback is so that you pass in a function to it, and call for it
 
+
+And the way javascript will read that parameter, it consider it more like object
+javascript consider callbacks to be passed as arguments, stored in variables, or returned from other functions.
+
+
  */
 
 /*
-So you understand better lets see this:
+But thats a lot to take in so lets understand this truly:
 
 For a fact theres something called callback hell, in it you have this code:
 
