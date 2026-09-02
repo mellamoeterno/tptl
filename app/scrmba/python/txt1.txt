@@ -1,0 +1,26 @@
+ python stuff
+ 
+ the len function, which can measure almost anything: lists, strings, …
+
+
+ ---
+
+The max function take multiple values and give back the biggest one, the syntax is:
+
+max(1, 5, 2)
+
+and it would give back 5.
+
+
+
+What's given back by a function can be used:
+
+By naming the given value using a variable.
+By passing the given value directly to another function.
+Typically if you want to print the 5 from the previous example, you can either do:
+
+biggest_one = max(1, 5, 2)
+print(biggest_one)
+or:
+
+print(max(1, 5, 2))
