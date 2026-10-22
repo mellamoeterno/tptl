@@ -1,4 +1,4 @@
-//i want to talk about how arrow functions work as data transform and state
+//i want to talk about how arrow functions work as data transform and
 //state updater
 
 // ============================================
